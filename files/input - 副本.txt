@@ -1,0 +1,2242 @@
+%%
+%% This is file `sample-manuscript.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,manuscript')
+%%
+%% IMPORTANT NOTICE:
+%%
+%% For the copyright see the source file.
+%%
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-manuscript.tex.
+%%
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%%
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[manuscript,screen,review]{acmart}
+
+\usepackage{lipsum}
+\usepackage{clrscode}
+\usepackage{appendix}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{url}
+%\usepackage{graphicx,epstopdf}
+%\usepackage[caption=false]{subfig}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+% \usepackage{amssymb}
+\usepackage{makecell}
+\usepackage{mathrsfs}
+\usepackage{showlabels}
+\usepackage{hyperref}
+\usepackage{graphicx,graphics,subfigure}
+\usepackage{hyperref,url}
+\usepackage{epsf,epstopdf}
+%\usepackage[bookmarks=false]{hyperref}
+% package `geometry' implicily changes the page layout (margins)
+%\usepackage{geometry}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{bm}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\numberwithin{equation}{section}
+
+\newtheorem{Theorem}{Theorem}[section]
+% \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Definition}{Definition}
+\newtheorem{example}[section]{Example}
+\newtheorem{Assumption}{Assumption}
+% \newtheorem{remark}[theorem]{Remark}
+% \newtheorem{question}{Question}[section]
+
+
+\def\red#1{\textcolor{red}{#1}}
+\def\black#1{\textcolor{blue}{#1}}
+
+\newcommand{\T}{\top}
+\newcommand{\E}{\mathbb{E}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\etal}{ et al. }
+\newcommand{\br}{\mathbb{R}}
+
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\Snn}{\mathbb{S}^{n\times n}}
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\zero}{\textbf{0}~}
+\newcommand{\mvec}{\mbox{vec}}
+\newcommand{\mat}{\mbox{mat}}
+\newcommand{\orth}{\mathsf{St}_{n,p}}
+\newcommand{\stief}{\mathsf{St}_{d,r}}
+\newcommand{\grass}{\mathsf{Gr}_{d,r}}
+\newcommand{\mskew}{\mathrm{skew}}
+\newcommand{\mF}{f}
+\newcommand{\mL}{\mathcal{L}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\mbC}{\mathbb{C}}
+\newcommand{\mT}{\mathcal{T}}
+\newcommand{\teigs}{\textbf{eigs}}
+\newcommand{\mN}{\mathcal{N}}
+\newcommand{\mbsign}{\mbox{\bf sign}}
+\newcommand{\st}{\mathrm{s.t.}}
+\newcommand{\mE}{\mathcal{E}}
+\newcommand{\mR}{\mathcal{R}}
+\newcommand{\wR}{\widetilde{R}}
+\newcommand{\wN}{\widetilde{N}}
+\newcommand{\mM}{\mathcal{M}}
+\newcommand{\mD}{\bm{d}}
+\newcommand{\Drho}{D_{\rho}}
+\newcommand{\argmin}{\mathop{\mathrm{arg\,min}}}
+\newcommand{\argmax}{\mathop{\mathrm{arg\,max}}}
+\newcommand{\odr}{\overline{\delta r}}
+\newcommand{\udr}{\underline{\delta r}}
+\newcommand{\oq}{\overline{q}}
+\newcommand{\uq}{\underline{q}}
+\newcommand{\ola}{\overline{\lambda}}
+\newcommand{\ula}{\underline{\lambda}}
+\newcommand{\oom}{\overline{\omega}}
+\newcommand{\uom}{\underline{\omega}}
+\usepackage{layout}
+\usepackage{tabularx} % 导入tabularx包以使用X参数
+ % \usepackage{geometry} % 调整页面布局
+  % \geometry{left=3cm,right=3cm,top=2cm,bottom=2cm}
+
+%\DeclareMathOperator{\argmin}{\operatorname*{arg\,min}}
+%\DeclareMathOperator{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\myarg}{\mathop{\mathrm{arg}}}
+\newcommand{\Drhok}{D_{\rho, k}}
+\newcommand{\mP}{h}
+\newcommand{\mTr}{\text{Tr}}
+\newcommand{\mtr}{\mbox{tr}}
+\newcommand{\tW}{\widetilde{W}}
+\newcommand{\mK}{\mathcal{K}}
+%\newcommand{P_XD}{\widetilde{g}}
+\newcommand{\tJ}{\widetilde{J}}
+\newcommand{\tF}{\widetilde{F}}
+\newcommand{\eqreff}[1]{(\eqref{#1})}
+\newcommand{\nii}{\noindent}
+\newcommand{\qf}{\text{qf}}
+\newcommand{\nn}{\nonumber}
+\newcommand{\diag}{\text{diag}}
+\newcommand{\Diag}{\text{Diag}}
+\newcommand{\proj}{h}
+\newcommand{\by}{\mathrm{\bf y}}
+\newcommand{\bs}{\mathrm{\bf s}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bw}{\mathbf{W}}
+\newcommand{\mfS}{\mathbf{S}}
+\newcommand{\mfY}{\mathbf{Y}}
+\newcommand{\mfR}{\mathbf{R}}
+\newcommand{\LBB}{\mathrm{LBB}}
+\newcommand{\SBB}{\mathrm{SBB}}
+\newcommand{\mfD}{\mathbf{D}}
+\newcommand{\mfL}{\mathbf{L}}
+\newcommand{\mscrL}{\mathscr{L}}
+\newcommand{\nF}{\nabla \mathcal{F}}
+\newcommand{\rmn}[1]{\romannumeral#1}
+\newcommand{\Rmn}[1]{\uppercase\expandafter{\romannumeral#1}}
+\renewcommand{\theenumi}{\roman{enumi}}
+\renewcommand{\labelenumi}{\theenumi}
+\newcommand{\rev}[1]{{\color{red}{#1}}}
+\newcommand{\rblue}[1]{{\color{blue}{#1}}}
+\newcommand{\rblack}[1]{{\color{black}{#1}}}
+%\renewcommand{\smartqed}{\hfill{\qed}}
+\newcommand{\Fsf}{\mathsf{F}}
+\newcommand{\Tsf}{\mathsf{T}}
+\newcommand{\Xcal}{\mathcal{X}}
+\newcommand{\Ebb}{\mathbb{E}}
+\newcommand{\BB}{\mathrm{BB}}
+\newcommand{\Bsf}{\mathsf{B}}
+\newcommand{\Tcal}{\mathcal{T}}
+\newcommand{\Rcal}{\mathcal{R}}
+\newcommand{\llangle}{\left \langle}
+\newcommand{\rrangle}{\right \rangle}
+\newcommand{\tx}{\tilde{X}}
+\newcommand{\tX}{\tilde{X}}
+\newcommand{\Gcal}{\mathcal{G}}
+\newcommand{\Dcal}{\Gcal^{\mathrm{R}}}
+\newcommand{\Pcal}{h}
+\newcommand{\Fcal}{\mathcal{F}}
+\newcommand{\Kcal}{\mathcal{K}}
+\newcommand{\Ocal}{\mathcal{O}}
+\newcommand{\Tbf}{\mathbf{T}}
+\newcommand{\Rscr}{\mathcal{R}}
+\newcommand{\ud}{\mathrm{d}}
+\numberwithin{equation}{section}
+\newcommand{\Pbb}{\mathbb{P}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Drm}{\mathrm{D}}
+\newcommand{\drm}{\mathrm{d}}
+\newcommand{\rgrad}{\mathrm{grad}}
+\newcommand{\up}{\mathrm{up}}
+\newcommand{\qr}{\mathrm{qr}}
+\newcommand{\cS}{\mathbb{S}}
+\newcommand{\Mcal}{\mathcal{M}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\cbf}{\mathbf{c}}
+\newcommand{\dbf}{\mathbf{d}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\fbf}{\mathbf{f}}
+\newcommand{\Lbf}{\mathbf{L}}
+\newcommand{\Nsf}{\mathsf{N}}
+\newcommand{\TR}{\#\mathrm{N}_{\Rscr}}
+\newcommand{\TCG}{\#\mathrm{N}_{\mathrm{cg}}}
+\newcommand{\TT}{\#\mathrm{N}_{\mathrm{\mathcal{T}}}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\sym}{\mathrm{sym}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\hess}{\mathrm{Hess}}
+\newcommand{\prox}{\mathrm{prox}}
+%\renewcommand\arraystretch{10}
+% \numberwithin{theorem}{section}
+\newcommand{\iprod}[2]{\left \langle #1, #2 \right \rangle }
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\Diff}{\mathrm{Diff}}
+\providecommand{\xx}{\mathbf{x}}
+\providecommand{\cD}{\bm{d}}
+
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmlicensed}
+\copyrightyear{2018}
+\acmYear{2025}
+\acmDOI{XXXXXXX.XXXXXXX}
+%% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Conference acronym 'XX]{Make sure to enter the correct
+%   conference title from your rights confirmation email}{June 03--05,
+%   2018}{Woodstock, NY}
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+\acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{A primal dual semismooth Newton based algorithm framework for practical convex composite optimization}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+
+% \author{Ben Trovato}
+% \authornote{Both authors contributed equally to this research.}
+% \email{trovato@corporation.com}
+% \orcid{1234-5678-9012}
+% \author{G.K.M. Tobin}
+% \authornotemark[1]
+% \email{webmaster@marysville-ohio.com}
+% \affiliation{%
+%   \institution{Institute for Clarity in Documentation}
+%   \city{Dublin}
+%   \state{Ohio}
+%   \country{USA}
+% }
+
+% \author{Lars Th{\o}rv{\"a}ld}
+% \affiliation{%
+%   \institution{The Th{\o}rv{\"a}ld Group}
+%   \city{Hekla}
+%   \country{Iceland}}
+% \email{larst@affiliation.org}
+
+% \author{Valerie B\'eranger}
+% \affiliation{%
+%   \institution{Inria Paris-Rocquencourt}
+%   \city{Rocquencourt}
+%   \country{France}
+% }
+
+% \author{Aparna Patel}
+% \affiliation{%
+%  \institution{Rajiv Gandhi University}
+%  \city{Doimukh}
+%  \state{Arunachal Pradesh}
+%  \country{India}}
+
+% \author{Huifen Chan}
+% \affiliation{%
+%   \institution{Tsinghua University}
+%   \city{Haidian Qu}
+%   \state{Beijing Shi}
+%   \country{China}}
+
+% \author{Charles Palmer}
+% \affiliation{%
+%   \institution{Palmer Research Laboratories}
+%   \city{San Antonio}
+%   \state{Texas}
+%   \country{USA}}
+% \email{cpalmer@prl.com}
+
+% \author{John Smith}
+% \affiliation{%
+%   \institution{The Th{\o}rv{\"a}ld Group}
+%   \city{Hekla}
+%   \country{Iceland}}
+% \email{jsmith@affiliation.org}
+
+% \author{Julius P. Kumquat}
+% \affiliation{%
+%   \institution{The Kumquat Consortium}
+%   \city{New York}
+%   \country{USA}}
+% \email{jpkumquat@consortium.net}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Deng et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+ In this paper, we propose a semismooth Newton-based algorithmic framework called SSNCVX for solving a broad class of convex composite optimization problems involving nonsmooth terms and conic constraints. Our framework uniformly handles multi-block formulations including LP, QP, SOCP, SDP with nonnegative constraint, Lasso, fused Lasso, SPCA and etc. By exploiting the augmented Lagrangian duality, we reformulate the original problem into a saddle point problem and characterize the optimality conditions via a semismooth system of nonlinear equations. The nonsmooth structure is handled internally without requiring problem-specific relaxations or auxiliary variables. This design allows easy modifications to the model structure—such as adding linear, quadratic, or shift terms—through simple interface-level updates. The proposed method features a single-loop structure that simultaneously updates primal and dual variables using a semismooth Newton step. Extensive numerical experiments on benchmark datasets show that SSNCVX consistently outperforms state-of-the-art solvers in both robustness and efficiency across a wide range of problem classes.
+
+% Specifically, we first transform the original problem into an equivalent saddle point problem. Consequently, a semismooth system of nonlinear equations is
+%  formulated to characterize the optimality of the original problem instead of the inclusion-form KKT
+%  conditions.
+% We then develop a  semismooth Newton method to find a root of the natural residual induced by the augmented Lagrangian dual function. 
+
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>00000000.0000000.0000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>
+% \end{CCSXML}
+
+\ccsdesc[500]{Mathematics of computing~Mathematical software}
+% \ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{convex composite optimization,  semismooth Newton method, Matlab software package.}
+
+% \received{20 February 2007}
+% \received[revised]{12 March 2009}
+% \received[accepted]{5 June 2009}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+% \layout
+
+In this paper,  we aim to develop an algorithm framework for the following convex composite problem:
+
+\begin{equation} \label{general}
+\begin{aligned}
+\min_{\bm{x} } &\quad p(\bm{x}) + f(\mathcal{B}(\bm{x})) + \iprod{\bm{c}}{\bm{x}} + \frac{1}{2}\iprod{\bm{x}}{\mathcal{Q}(\bm{x})}    , \\
+\text{s.t.}  & \quad  \bm{x} \in \mathcal{P}_1,~~ \mathcal{A}(\bm{x}) \in \mathcal{P}_2,
+\end{aligned}
+\end{equation}
+where $p(x)$ is a convex and nonsmooth function,  $\mathcal{A}: \mathcal{X} \rightarrow \mathbb{R}^m, \mathcal{B}: \mathcal{X} \rightarrow \mathbb{R}^d $ are linear operators, $f: \mathbb{R}^d \rightarrow \mathbb{R}$ is a convex function, $\bm{c} \in \mathcal{X}$, $\mathcal{Q}$ is a positive semidefinite matrix or operator, $\mathcal{P}_1 = \{\bm{x} \in \mathcal{X} | \texttt{l} \le \bm{x} \le \texttt{u} \}$ and $ \mathcal{P}_2 = \{\bm{x}\in \mathbb{R}^m|\texttt{lb} \le \bm{x} \le \texttt{ub}\}$.   The choices of $p(\bm{x})$ provide flexibility to handle many types of problems. While the proposed model \eqref{general} focus on one single variables $\bm{x}$, it is indeed capable of solving the following more general problem with $N$ block of variables with shift terms $\bm{b}_{1,i}$ and $\bm{b}_{2,i}, (i =1,\cdots,N)$:
+\begin{equation} \label{general-block}
+\begin{aligned}
+\min_{\bm{x}_i } &\quad \sum_{i=1}^N p_i(\bm{x}_i - \bm{b}_{1,i} ) + \sum_{i=1}^N f_i(\mathcal{B}_i(\bm{x}) - \bm{b}_{2,i})  + \sum_{i=1}^N \iprod{\bm{c}_i}{\bm{x}_i} + \sum_{i=1}^N \frac{1}{2}\iprod{\bm{x}_i}{\mathcal{Q}_i(\bm{x}_i)}  , \\
+\text{s.t.}  & \quad  \bm{x}_i \in \mathcal{P}_{1,i},~~ \sum_{i=1}^N \mathcal{A}_i (\bm{x}_i) \in \mathcal{P}_{2,i}, \quad i =1,\cdots,N,
+\end{aligned}
+\end{equation}
+where $\mathcal{Q}_i,p_i,f_i, \mathcal{P}_{1,i}$ and $\mathcal{P}_{2,i}$ satisfy the same assumption in \eqref{general}.
+Model \eqref{general} and \eqref{general-block} have widespread applications in engineering, image processing, and machine learning.  We refer the readers to for \citep{boyd2011distributed,anjos2011handbook,wolkowicz2012handbook} details.
+
+\subsection{Related works}
+
+The interior point method is a classical approach for solving a subclass of \eqref{general}, particularly conic programming problems. There are interior point based well-designed open-source solvers such as {SeDuMi} \cite{sturm1999using} and {SDPT3} \cite{toh1999sdpt3}. For commercial solutions, {MOSEK} \cite{mosek} is a high-performance optimization package specializing in large-scale convex problems (e.g., LP, QP, SOCP, SDP) via interior point algorithms. Another state-of-the-art solver, {Gurobi} \cite{optimization2021gurobi}, excels in speed and scalability for complex optimization tasks, including LP and QP.
+Building on these solvers, {CVX} \cite{grant2008cvx} is a MATLAB-based modeling framework for convex optimization, while its Python counterpart {CVXPY} \cite{diamond2016cvxpy} offers similar functionality. However, when handling nonsmooth term in \eqref{general}, the interior point method smoothes the objective function by constructing a barrier function.  
+% Compared with the barrier function based method, the Moreau envelope smoothing technique can be used to deal with non-smooth functions without introducing slack variables.
+For example, when $p(\bm{x}) = \|\bm{x}\|_1$, the standard way to solve problems with $\|\cdot\|_{\infty}$  constraint is via linear programming techniques \cite{becker2011templates} since it is well known that
+it can be recast as a linear program \cite{candes2007dantzig}. Some solvers rely on interior point
+methods which are somewhat problematic for large-scale problems, since they
+do not scale well with size.  Furthermore, it should be noted that each iteration of the interior-point algorithm necessitates the factorization of the Schur complement matrix. As the dimensionality of the constraint set increases, both the computational complexity and memory footprint exhibit larger growth, resulting in a substantial escalation of computational overhead. When iterative solvers are implemented, the inherent low-rank or high-rank structural properties of the solution space remain unexploited, potentially compromising computational efficiency.
+
+% The interior point method is a classical approach for solving a subclass of \eqref{general}, particularly the conic programming. 
+% % There are many well-designed solvers for conic programming.
+% SeDuMi \cite{sturm1999using} and SDPT3 \cite{toh1999sdpt3} are well-designed interior point based open-source solvers.  For commercial solvers, MOSEK \cite{mosek} is an interior point algorithm based high-performance optimization software package designed to solve large-scale mathematical optimization problems. It specializes in solving convex optimization problems, including LP, QP, SOCP, SDP, etc. Gurobi \cite{optimization2021gurobi} is a state-of-the-art solver designed to tackle complex mathematical optimization problems efficiently. It is widely recognized for its speed, accuracy, and ability to handle large-scale problems across various industries including LP and QP. Based on these solvers, CVX \cite{grant2008cvx} is a MATLAB-based modeling framework for convex optimization that leverages high-performance solvers to efficiently solve optimization problems. Additionally, its Python counterpart, CVXPY \cite{diamond2016cvxpy}, provides similar functionality for Python users. 
+
+
+% Thansk to the interior point based solvers such as SDPT3, Sedumi, Mosek, and Gurobi.  CVX \cite{grant2008cvx} is a Matlab-based modeling system for convex optimization that interfaces with these solvers. It also has a Python version called CVXPY \cite{diamond2016cvxpy}. 
+
+
+
+In addition to interior point method, semismooth Newton methods are also efficient algorithms to solve a subclass problem of \eqref{general}, such as Lasso \cite{li2018highly} and SDP \cite{li2018semismooth} problems. Motivated by the equivalence between the Douglas-Rachford splitting (DRS) iteration and the ADMM, a semismooth Newton method based solver, SSNSDP, for SDP problems arising in electronic structure calculations has been proposed \citep{li2018semismooth}. However, its convergence analysis relies on switching between the semismooth Newton method and ADMM. SDPNAL+ \cite{sun2020sdpnal+} and SSNAL \cite{li2018semismooth} are semismooth Newton based and well-developed Matlab software for semidefinite
+programming with bound constraints and the Lasso problem, respectively.  Compared with interior point methods, semismooth Newton methods make use of the intrinsic sparse or low-rank structure efficiently. Consequently, each iteration can be executed at a low cost.
+Furthermore, semismooth Newton methods can also solve large-scale optimization problems with low memory. For example, it can solve $10^4$ variable size SDP with $10^7$ linear constraint problems with only 16GB memory. However, the scalability of most semismooth Newton methods is lacking. Most solvers are designed for specific problems. Algorithms based on DRS or proximal gradient mapping can only handle two block problems. 
+
+% Furthermore, as a second-order algorithm, applying Hessian information at each step speeds up the convergence process in most cases. Its superlinear convergence guarantee ensures that iteration points converge fast to higher accuracy solutions.
+
+Compared with the second order methods mentioned above, first order methods are also popular to solve \eqref{general} due to its ease of implementation and high speed to converge to a moderate accuracy point. ABIP and ABIP+ \cite{deng2022new}  are new interior-point method solvers for cone programming. ABIP
+uses a few steps of ADMM to approximately solve the sub-problems that arise when applying a pathfollowing barrier algorithm to the homogeneous self-dual embedding of the problem. SCS \cite{o2021operator,o2016conic} is an ADMM-based solver for convex quadratic cone programs implemented in C. SCS applies ADMM to the homogeneous self-dual embedding of the problem, which yields infeasibility
+certificates when appropriate. TFOCS \cite{becker2011templates} and FOM \cite{beck2019fom} are solvers that aim to solve convex composite optimization problems using a class of first order
+algorithms such as the Nesterov type accelerated method.  However, most first-order algorithms have slow tail convergence and may fail on slightly more challenging problems. More importantly, the sparsity and low-rank properties of the algorithms are not used in the iteration process. Furthermore, most of them can only handle two or three blocks of composite problems \cite{beck2019fom}. 
+
+
+
+
+
+%  The algorithms used by existing solvers can roughly be divided into
+% two categories. One is first order algorithms such as proximal gradient or accelerated proximal gradient.  The advantages of first order methods are they are easy to implement and converge fast to a solution with moderate accuracy. 
+
+
+% The other is second-order methods such as interior point methods and semismooth Newton methods. The advantages are that they usually converge fast to a solution with high accuracy but they are not easy to implement. Moreover, nearly all of these second-order information-based solvers rely on certain nondegeneracy assumptions to guarantee the nonsingularity of the corresponding inner linear systems.
+
+ % In comparison with SDPNAL+, the framework \eqref{general} we consider can also handle problems with more general nonsmooth term such as $\ell_1$ norm.
+
+
+
+\subsection{Contribution}
+Different from \cite{deng2025augmented}, we makes a distinct contribution by developing a general-purpose optimization framework for solving the broad class of problems described by model \eqref{general}. 
+% The algorithm proposed in this paper is based on  \cite{deng2025augmented}. However, we focus on designing a practical algorithm framework for model \eqref{general} that contains many kinds of classical and important problems and theor applications instead of designing a new algorithm. 
+The contribution of this paper is listed as follows:
+\begin{itemize}
+\item  A practical model that encompasses various optimization problems with nonsmooth terms or constraints (see Table~\ref{tabel-problem-summarize} for details). By leveraging AL duality, we transform the original problem \eqref{general} into a saddle point problem and formulate a semismooth system of nonlinear equations to characterize the optimality conditions. Unlike interior point methods, our framework handles nonsmooth terms such as coupling conic constraints and simple norm constraints in standard form, avoiding the need for additional relaxation variables. Furthermore, it is more user-friendly, allowing for easy modifications to the optimization model, such as adding linear, quadratic, or shift terms. Instead of designing separate algorithms for each problem, the proposed framework requires only the selection of different functions and constraints, with updates made solely at the interface level. To the best of our knowledge, this is the first algorithmic framework capable of uniformly handling a wide range of problems.
+
+\item A unified algorithm framework that can handle complex multi-block semismooth systems. Different from many second order algorithms based solvers that rely on switching with first-order algorithms to guarantee convergence, our one loop algorithm uses the second-order information at each step. It updates both primal and dual variables in a single regularized semismooth Newton step simultaneously. Furthermore,  standardizing the Jacobian calculation enables second order information processing for numerous functions. Combined with the iterative method, a general framework for the extension of second-order algorithms is presented.
+% The global convergence is guaranteed by carefully designing inexact criteria and leveraging the inherent $\alpha$-averaged property to control the error.  Furthermore, this methodology ensures that each step incorporates Hessian information, and the local superlinear convergence can be guaranteed under additional assumptions.
+
+\item Comprehensive and promising numerical results. We test SSNCVX with other state-of-the-art solvers on Lasso, fused Lasso, SOCP, QP, and SPCA problems. SSNCVX demonstrates superior performance compared with state-of-the-art solvers on all tested problems. The results demonstrate the robustness and efficiency of SSNCVX. 
+% Most of the existing software packages are based on first order algorithms such as primal-dual algorithms. we develop a MATLAB software package incorporating second-order algorithms to solve a wide range of optimization problems. The comparison on Lasso, Fused Lasso, QP and SOCP problems with stat of the art solvers demonstrate the superiority of our algorithm.
+% \item We have numerous numerical experiments to verify the robustness and efficiency of different kinds of problems.
+\end{itemize}
+
+\subsection{Notation}
+For a linear operator $\mathcal{A}$, we denote its adjoint operator by $\mathcal{A}^*$.  For a proper convex function $g$,  we define its domain as ${\rm dom}(g):=\{ \bm{x}: g(\bm{x}) < \infty\}$. The Fenchel conjugate function of $g$ is $g^*(\bm{z}) := \sup_{\bm{x}}\{\left<\bm{x},\bm{z}\right> - g(\bm{x})  \}$ and the subdifferential  is $ \partial g(\bm{x}): = \{\bm{z}:~ g(\bm{y}) - g(\bm{x}) \geq \left<\bm{z}, \bm{y} - \bm{x}  \right>,~\forall \bm{y}  \}. $
+For a convex set $\mathcal{Q}$, we use the notation $\delta_{\mathcal{Q}}$ to denote the indicator function of the set $\mathcal{Q}$, which takes value $0$ on $\mathcal{Q}$ and $+\infty$ elsewhere. The relative interior of $ \mathcal{Q}$ is denoted by ${\rm ri}(\mathcal{Q})$. 
+ % and its conjugate function is $\delta_{\mathcal{Q}}^*(\bm{p})=\sup\{\iprod{\bm{d}}{\bm{p}}| \bm{d} \in \mathcal{Q} \}$.  
+ For any proper closed convex function $g$, and constant $t>0$, the proximal operator of $g$ is defined by $
+    \prox_{tg}(\bm{x}) = \arg\min_{\bm{y}}\{g(\bm{y}) + \frac{1}{2t}\|  \bm{y} - \bm{x}\|^2  \}. 
+$
+When $g = \delta_{\mathcal{C}}(\bm{x})$ is the indicator function of a convex set $\mathcal{C}$, it holds that ${\rm prox}_{tg}(\bm{x}) = \Pi_{\mathcal{C}}(\bm{x})$, where $\Pi_{\mathcal{C}}$ denotes the projection on set $\mathcal{C}$.  
+
+\subsection{Organization}
+The rest of this paper is listed as follows. A primal-dual semismooth Newton method based on AL duality is introduced in Section \ref{2}.  The properties of the proximal operator are introduced in Section \ref{3}. Extensive experiments on various problems are conducted in Section \ref{4} and we conclude this paper in Section \ref{5}.
+\afterpage{
+\begin{landscape}
+\begin{table}[ht]
+\centering
+\footnotesize
+\resizebox{1.3\textwidth}{!}{
+\begin{tabular}{|p{2cm}|c|c|c|}
+\hline
+\textbf{Problem} & \textbf{Objective Function} & \textbf{Constraints} & \textbf{Function block} \\
+\hline
+   & $\underbrace{\iprod{\bm{c}}{\bm{x}}}_{(1)} + \underbrace{\frac{1}{2}\iprod{\bm{x}}{\mathcal{Q}(\bm{x})}}_{(2)} + \underbrace{f(\mathcal{B}(\bm{x}))}_{(3)} + p(\bm{x})$ & $ \underbrace{\bm{x} \in \mathcal{P}_1}_{(4)}$, $\underbrace{\mathcal{A}(\bm{x}) \in \mathcal{P}_2}_{(5)}.$ & (1) (2) (3) (4) (5)  \\
+\hline
+ LP & $ \iprod{\bm{c}}{\bm{x}} $ & $\mathcal{A}(\bm{x}) = \bm{b},  \bm{x} \ge 0$ & (1)(5) \\
+\hline
+ SOCP & $\iprod{\bm{c}}{\bm{x}}$ & $\mathcal{A}(\bm{x}) = \bm{b},  \bm{x} \in \mathcal{Q}^n$ & (1)(5) \\
+\hline
+ SDP & $\iprod{\bm{C}}{\bm{X}}$ & $\mathcal{A}(\bm{X}) = \bm{b},  \bm{X} \succeq 0$ & (1)(5) \\
+\hline
+ SDP with box constraints & $ \iprod{\bm{C}}{\bm{X}} $ & $\mathcal{A}(\bm{X}) = \bm{b},  \bm{x} \in \mathcal{P}_1, \bm{X} \succeq 0$ & (1)(4)(5) \\
+\hline
+ QP & $ \iprod{\bm{x}}{\mathcal{Q}(\bm{x})} + \iprod{\bm{x}}{\bm{c}}$ & $\texttt{l} \le \bm{x} \le \texttt{u}, \mathcal{A}(\bm{x}) = \bm{b}$ & (1)(2)(4)(5) \\
+\hline
+  QP with $\ell_1$ norm & $ \iprod{\bm{x}}{\mathcal{Q}(\bm{x})} + \lambda \|\bm{x}\|_1 $ & $\texttt{l} \le \bm{x} \le \texttt{u}, \mathcal{A}(\bm{x}) = \bm{b}$ & (1)(2)(3)(5) \\
+\hline
+ Lasso & $\frac{1}{2}\|\mathcal{B}(\bm{x})-\bm{b} \|^2+ \lambda \|\bm{x}\|_1$ & -  & (3) \\
+\hline
+ Fused lasso & $\frac{1}{2}\|\mathcal{B}(\bm{x}) -\bm{b} \|^2 + \lambda_1 \|\bm{x} \|_1 + \lambda_2\|D\bm{x}\|_1$ & - & (3) \\
+\hline
+ Group Lasso & $\frac{1}{2}\|\mathcal{B}(\bm{x})-\bm{b} \|^2+ \lambda \|\bm{x}\|_2$ &-& (3) \\
+\hline
+ Top-k Lasso & $ \frac{1}{2}\|\mathcal{B}(\bm{x}) -\bm{b} \|^2 +  \lambda \sum_{i=1}^k \bm{x}_{[i]} $ &-& (3) \\
+\hline
+Low-rank matrix recovery & $ \|\mathcal{B}(\bm{X}) - \bm{B}\|_{\mathrm{F}}^2 + \lambda \|\bm{X}\|_*$ & - & (3) \\
+\hline
+  Sparse covariance matrix estimation & $  - \log(\text{det}(\bm{X})) + \tr(\bm{XS}) + \lambda \|\bm{X}\|_1 $ & - & (1)(3) \\
+\hline
+% \multirow{2}{*}{convex constraint} & $\ell_{\infty}$ constraint & $ \|\bm{x} \|_1 $ & $\| \mathcal{B} \bm{x} -\bm{b} \|_{\infty} < \lambda $ & (3) \\
+% \cline{2-5}
+% & $\ell_{1}$ constraint & $ \|\mathcal{B}(\bm{x}) - \bm{b} \|_1 $ & $\| \bm{x} \|_{1} < \lambda $ & (3) \\
+% \hline
+ Sparse PCA & $  - \iprod{\bm{L}}{\bm{x}} + \lambda \|\bm{x} \|_1   $ & $\tr(\bm{x}) =1, \bm{x} \succeq 0$ & (3) \\
+\hline
+  Baseis pursuit & $  \|\bm{x}\|_1   $ & $ \mathcal{A}(\bm{x}) = \bm{b}  $ & (5) \\
+\hline
+  Roubst PCA & $  \|\bm{x}_1\|_* + \lambda \|\bm{x}_2\|_1   $ & $ \bm{x}_1 + \bm{x}_2  = \bm{D} $ & (3)(5) \\
+% \cline{1-5}
+% & convex clustering problem & $ \frac{1}{2}\sum_{i=1}^{n}\|\bm{x}_i - \bm{a}_i\|^2 + \gamma \sum_{(i,j)\in \mathcal{E}} w_{ij}\|\bm{x}_i - \bm{x}_j\|_q $ & - &  (3) \\
+\hline
+\end{tabular}
+}\caption{The examples of problems that Model \eqref{general} is able to solve.}
+\label{tabel-problem-summarize}
+\end{table}
+\end{landscape}
+}
+
+
+% \section{Examples} 
+% The classical models that \eqref{general} includes are classified as follows. 
+
+%  We note that we focus on the conic programing with the following structure:
+% \begin{equation} \label{conic-general}
+% \min_{\bm{x}} \iprod{\bm{c}}{\bm{x}} ,\quad \st ~~ \bm{x} \succeq 0,~~ \texttt{bl} \le \mathcal{A}(\bm{x}) \le \texttt{bu}, ~~ \texttt{l} \le \bm{x} \le \texttt{u}.
+% \end{equation}
+% %where $P$ is the box constraint or the nonnegative cone.
+% % In addition, the SDP with affine linear constrains can be represented by
+% Model \eqref{conic-general} also includes SDP with affian constraints such as the relaxation SDP problem arising from  BIQ and clustering problems (RCP).
+
+
+
+% When $p(\bm{x}) = \delta_\mathcal{K}(\bm{x})$ denotes the nonnegative cone, semidefinite cone, or second-order cone, the corresponding problem is linear programming (LP),  semidefinite programming (SDP), or second-order cone programming (SOCP) respectively, i.e., the following classical  conic programming:
+% \begin{equation} \label{pro:conic}
+% \begin{aligned}
+%     \min_{\bm{x}} \iprod{\bm{c}}{\bm{x}} \quad \st \, \mathcal{A}(\bm{x}) = \bm{b},~~ \bm{x} \succeq 0.
+% \end{aligned}
+% \end{equation}
+
+
+%  If $h,p$ are two singleton sets and $\mathcal{P}_2 = \{\bm{b} \} $, then it corresponds to the classical quadratic programming (QP):
+% \begin{equation} \label{QP}
+% \min_{\bm{x}} \frac{1}{2}\iprod{\bm{x}}{\mathcal{Q}(\bm{x})} +  \iprod{\bm{c}}{\bm{x}} ~~ \text{s.t.}\, \mathcal{A}(\bm{x}) = \bm{b},\, \texttt{l} \le \bm{x} \le \texttt{u}.
+% \end{equation}
+% It is noted in \cite{mosek} that it is more welcomed to transform QP into second order conic programming. This transformation is numerically more robust than the one for quadratic problems. However, in this paper, we consider solving the dual of \eqref{QP}. This approach can make use of the sparsity of the problem. Furthermore, it can be extended to solve the $\ell_1$-QP problem directly.
+% \begin{equation} \label{l1-QP}
+%   \min_{\bm{x}} \frac{1}{2}\iprod{\bm{x}}{\mathcal{Q}(\bm{x})} + \|\bm{x} \|_1 ~~ \text{s.t.}\, \mathcal{A}(\bm{x}) = \bm{b},\, \texttt{l} \le \bm{x} \le \texttt{u}.
+% \end{equation}
+
+% We can also consider the following convex optimization problems with a convex constraint:
+% \begin{equation} \label{prob:linf}
+% \begin{aligned}
+%     \min_{\bm{x}}\quad & \|\bm{x}\|_1, \\
+%     \st\quad & \|\mathcal{B}(\bm{x}) - \bm{b} \|_{\infty} < \lambda_1.
+% \end{aligned}
+% \end{equation}
+%  For the $\ell_1$ constrainted problem:
+% \begin{equation} \label{pro-l1con}
+% \begin{aligned}
+%     \min_{\bm{x}} & \quad \|\mathcal{A}(\bm{x})-\bm{b}\|_2,  \\
+%     \st & \quad \|\bm{x}\|_1 \le \lambda_1,
+% \end{aligned}
+% \end{equation}
+% For constrained Lasso type problems such as \eqref{pro-l1con}, we note that our algorithm can solve it directly instead of solving a series of subproblems of level set method \cite{li2018efficiently}.
+
+% When  $\mathcal{Q} = 0$ and $\bm{c} =0,$ the corresponding two-block  composite optimization is:
+% \begin{equation}\label{comp-lasso}
+% \min_{\bm{x}} \quad  \frac{1}{2}\|\mathcal{A}(\bm{x})-\bm{b}\|^2 + p(\bm{x}),
+% \end{equation}
+% Specially, when $f(\bm{x}) = \frac{1}{2}\|\mathcal{A}(\bm{x})-\bm{b}\|^2$ and $p(\bm{x})$ is a nonnegative positively homogeneous convex function such that $p(0)=0,$ i.e., a gauge function. Model \eqref{comp-lasso} covers typical problems that arise in statistical learning. We list a few of them as follows:
+% \begin{itemize}
+% \item When $p(\bm{x}) = \lambda \|\bm{x}\|_1$, the problem corresponds to the classical Lasso problem.
+%   \item When $p(\bm{x}) = \lambda_1 \|B\bm{x}\|_1 + \lambda_2 \|\bm{x}\|_1,$ where $B\bm{x} = [\bm{x}_2 - \bm{x}_1,\cdots,\bm{x}_n- \bm{x}_{n-1}]^{\top} \in \mathbb{R}^{n-1},$ then the problem corresponds to the classical fused Lasso problem.
+%   \item When $p(\bm{x}) = \lambda \sum_{i=1}^k \bm{x}_i,$ then the problem corresponds to the classical top-k Lasso problem.
+%     \end{itemize}
+
+
+% In addition to Lasso type problems, the robust PCA problem for video segmentation problem can be represented by:
+% \begin{equation} \label{RPCA}
+%  \min_{\bm{X}}  \|\bm{X}\|_* + \|\bm{D} - \bm{X} \|_1,
+% \end{equation}
+% where $\bm{X}, \bm{D} \in \mathbb{R}^{m \times n},$
+% Model \eqref{general} also covers problems arising in machine learning. 
+% % The convex clustering model is presented as:
+% %   \be \label{cluster}
+% %   \min_{\bm{X} \in \mathbb{R}^{d \times n}} \frac{1}{2}\sum_{i=1}^{n}\|\bm{x}_i - \bm{a}_i\|^2 + \gamma \sum_{(i,j)\in \mathcal{E}} w_{ij}\|\bm{x}_i - \bm{x}_j\|_q,
+% %   \ee
+% % where $\bm{X} = [\bm{x}_1,\cdots,\bm{x}_n],$ denotes the calssification feature, $ \gamma > 0$ is a tuning parameter, $\mathcal{E} = \cup_{i=1}^n \{( i, j)| j\, \text{is}\, i \text{'s $k$-nearest neighbors,} i < j \le n\}$ is the edge set. Typically, $p$ is chosen to be $1,2$ or $\infty.$  After solving \eqref{cluster} and obtaining the optimal solution $\bm{X}^* = [\bm{x}_1^*,\cdots,\bm{x}_n^*],$ we assign the data vector $\bm{a}_i$ and $\bm{a}_j$ to the same cluster if and only if $\bm{x}_i^* = \bm{x}_j^*.$ In other words, $\bm{x}_i^*$ is the centroid for observation $\bm{a}_i.$
+% Sparse PCA has the following form:
+% \begin{equation} \label{pro:sparse}
+% \begin{aligned}
+% \min_{\bm{x}} - \iprod{\bm{L}}{\bm{x}} + \lambda \|\bm{x} \|_1,~ \st\, \tr(\bm{x}) =1, \bm{x} \succeq 0.
+% \end{aligned}
+% \end{equation}
+% The problems examples are summarized in Table \ref{tabel-problem-summarize}.
+
+
+
+
+
+
+
+
+\section{A primal dual semismooth Newton method} \label{2}
+ % We first transform the original problem \eqref{general}  into a saddle point problem using AL duality. Subsequently, a monotone nonlinear system induced by the saddle point problem is presented. 
+ % Such a nonlinear system is semismooth and equivalent to the Karush–Kuhn–Tucker (KKT) optimality condition of problem \eqref{general}. 
+ % We then introduce a semismooth Newton method to solve the nonlinear system in Section \ref{2-2}. The efficient implementation to solve the linear system is introducrd in Section \ref{2-3} and some implementation details of the algorithm are listed in Section \ref{2-4}. 
+ We first transform the original problem \eqref{general}  into a saddle point problem using AL duality in Section \ref{2-1}. Subsequently, a monotone nonlinear system induced by the saddle point problem is presented. Such a nonlinear system is semismooth and equivalent to the Karush–Kuhn–Tucker (KKT) optimality condition of problem \eqref{general}. We then introduce a semismooth Newton method to solve the nonlinear system in Section \ref{2-2}.
+ The efficient implementation to solve the linear system is introducrd in Section \ref{2-3}
+ and some implementation details of the algorithm are listed in Section \ref{2-4}. 
+\subsection{An equivalent saddle point problem} \label{2-1}
+The dual problem of \eqref{general} can be represented by
+\begin{equation} \label{general-dual}
+\begin{aligned}
+    &\min_{\bm{y},\bm{z},\bm{s},\bm{r},\bm{v}}  \quad  \delta_{\mathcal{P}_2}^*(-\bm{y}) + f^*(\bm{-z}) +  p^*(-\bm{s}) + \frac{1}{2} \iprod{\mathcal{Q}\bm{v}}{\bm{v}} + \delta_{\mathcal{P}_1}^*(-\bm{r}), \\
+    &\quad\st \quad  \mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} = \bm{c}.
+    \end{aligned}
+\end{equation}
+Introducing the slack variables $\bm{p},\bm{q},\bm{t}$, the equivalent optimization problem is
+\begin{equation} \label{general-dual2}
+\begin{aligned}
+&\min_{\bm{y},\bm{z},\bm{s},\bm{r},\bm{v},\bm{p},\bm{q},\bm{t}} \quad  \delta_{\mathcal{P}_2}^*(-\bm{p}) + f^*(\bm{-q}) - \iprod{\bm{b}_1}{\bm{s}} +  p^*(-\bm{s}) + \frac{1}{2} \iprod{\mathcal{Q}\bm{v}}{\bm{v}} + \delta_{\mathcal{P}_1}^*(-\bm{t}), \\
+    &\qquad \st \quad  \mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} = \bm{c},~~\bm{y}=\bm{p},~~\bm{z}=\bm{q},~~\bm{r}=\bm{t}.
+    \end{aligned}
+\end{equation}
+The augment Lagrangian function of \eqref{general-dual2} is
+\begin{equation*}
+\begin{aligned}
+& \mathcal{L}_{\sigma}(\bm{y},\bm{s},\bm{z},\bm{r},\bm{v},\bm{p},\bm{q},\bm{t},\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4) = \delta^*_{\mathcal{P}_2}(-\bm{p}) + f^*(-\bm{q}) +p^*(-\bm{s}) - \iprod{\bm{b}_1}{\bm{s}} + \frac{1}{2}\iprod{\mathcal{Q}(\bm{v})}{\bm{v}}  \\
+& \qquad + \delta_{\mathcal{P}_1}^*(-\bm{t})  + \frac{\sigma}{2}\left(\|\bm{p}-\bm{y}
++  \bm{x}_1/\sigma \|_{\mathrm{F}}^2
+ + \|\bm{q}-\bm{z}+ \frac{1}{\sigma}\bm{x}_2 \|_{\mathrm{F}}^2 + \|\bm{t}-\bm{r}+ \frac{1}{\sigma}\bm{x}_3 \|^2 \right) \\
+& \qquad + \frac{\sigma}{2}(\| \mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} - \bm{c} + \frac{1}{\sigma}\bm{x}_4 \|_{\mathrm{F}}^2) - \frac{1}{2\sigma}\sum_{i=1}^4\|\bm{x}_i\|^2 .
+% & = \delta^*_{\mathcal{P}_2}(-\bm{p}) + f^*(-\bm{q}) +p^*(-\bm{s}) + \frac{1}{2}\iprod{\mathcal{Q}(\bm{v})}{\bm{v}}  \\
+% &+ \delta_{\mathcal{P}_1}^*(-\bm{t})  + \frac{\sigma}{2}\left(\|\bm{p}-\bm{y}
+% +  \bm{x}_1/\sigma \|_{\mathrm{F}}^2
+%  + \|\bm{q}-\bm{z}+ \frac{1}{\sigma}\bm{x}_2 \|_{\mathrm{F}}^2 + \|\bm{t}-\bm{r}+ \frac{1}{\sigma}\bm{x}_3 \|^2 \right) \\
+% & + \frac{\sigma}{2}(\| \mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} - \bm{c} + \frac{1}{\sigma}(\bm{x}_4 - \bm{b}_1) \|_{\mathrm{F}}^2) - \frac{1}{2\sigma}\sum_{i=1}^4\|\bm{x}_i\|^2 \\
+% & + \iprod{\bm{b}_1}{\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}  - \mathcal{Q}\bm{v} + \bm{r} - \bm{c} + \frac{1}{\sigma}(\bm{x}_4)  }
+\end{aligned}
+\end{equation*}
+Minimizing $\mathcal{L}_{\sigma}$ with respect to variables $\bm{p},\bm{q},\bm{s},\bm{t}$ yields
+\begin{equation}
+\begin{aligned}
+\bm{p} &= \text{prox}_{\delta^*_{\mathcal{P}_2}/\sigma}(\bm{x}_1/\sigma - \bm{y}), \quad  \bm{q} = \text{prox}_{f^*/\sigma}(\bm{x}_2/\sigma -\bm{z}  ), \\
+\bm{s} &= \text{prox}_{p^*/\sigma}(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} - \mathcal{Q}\bm{v} + \bm{r} - \bm{c} + \frac{1}{\sigma}\bm{x}_4 ),
+\quad \bm{t}  = \text{prox}_{\delta^*_{\mathcal{P}_1}/\sigma }(\bm{x}_3/\sigma - \bm{r}).
+\end{aligned}
+\end{equation}
+Let $\bm{w} = (\bm{y},\bm{z},\bm{r},\bm{v},\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4)$ and then the modified augment Lagrangian function is:
+\begin{equation} \label{eqn-alm}
+\begin{aligned}
+\Phi_{\sigma}(\bm{w}) &  =  \underbrace{p^*(\prox_{p^*/\sigma}(\bm{x}_4/\sigma -\mathcal{A}^*(\bm{y}) - \mathcal{B}^*\bm{z}  - \mathcal{Q}\bm{v} -\bm{r} + \bm{c} ) ) + \frac{1}{2\sigma}\|\text{prox}_{\sigma p} (\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}  - \mathcal{Q}\bm{v} + \bm{r} - \bm{c})) \|^2}_{ \text{Moreau~envelope~} p^* }
+  \\
+& \quad   +  \underbrace{\delta_{\mathcal{P}_1}^*(\text{prox}_{\delta^*_{\mathcal{P}_1} }(\bm{x}_3/\sigma - \bm{t} ) ) + \frac{1}{2\sigma}\|\Pi_{\mathcal{P}_1}(\bm{x}_3 -\sigma\bm{r}  ) \|^2}_{ \text{Moreau~envelope~} \delta^*_{\mathcal{P}_1} } +\underbrace{ \delta^*_{\mathcal{P}_2}(\text{prox}_{\delta^*_{\mathcal{P}_2}/\sigma}(\bm{x}_1/\sigma -\bm{y})) + \frac{1}{2\sigma}\|\Pi_{\mathcal{P}_2}(\bm{x}_1 - \sigma \bm{y}) \|^2}_{ \text{Moreau~envelope~} \delta^*_{\mathcal{P}_2}  }     \\
+& \quad +  \underbrace{f^*(\text{prox}_{f^*/\sigma}(\bm{x}_2/\sigma -\bm{z} )) + \frac{1}{2\sigma} \|\text{prox}_{\sigma f}(\bm{x}_2 -\sigma \bm{z}  )  \|^2}_{ \text{Moreau~envelope~} f^* } + \frac{1}{2}\iprod{\mathcal{Q}\bm{v}}{\bm{v}} - \frac{1}{2\sigma}\sum_{i=1}^4 \|\bm{x}_i \|^2.
+\end{aligned}
+\end{equation}
+Henceforth, the differentiable saddle point problem is
+\begin{equation} \label{prob-minmax}
+    \min_{\bm{y},\bm{z},\bm{r},\bm{v}} \max_{\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4 } \Phi(\bm{y},\bm{z},\bm{r},\bm{v};\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4).
+\end{equation}
+
+ In the subsequent analysis, we make the following assumption.
+\begin{Assumption}[Slater’s condition] \label{assum}
+ The dual problem \eqref{general-dual2} has an optimal solution $\bm{y}_*, \bm{z}_*, \bm{s}_*, \bm{r}_*, \bm{v}_*.$ Furthermore,   Slater’s condition holds for the dual problem \eqref{general-dual}, i.e., there exists $-\bm{y} \in {\rm ri}({\rm dom}(\delta_{\mathcal{P}_2}^*)), - \bm{s} \in {\rm ri}({\rm dom}(p^*)), - \bm{r} \in {\rm dom} (\delta^*_{\mathcal{P}_1}) $  and $ -\bm{z} \in {\rm ri}({\rm dom}(f^*)) $ such that $\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} = \bm{c}.$
+\end{Assumption}
+
+Based on Slater’s condition, a property of the saddle point problem is that it satisfies the strong AL duality. 
+\begin{lemma}[Strong duality \cite{deng2025augmented}]
+    Suppose Assumption \ref{assum} holds. Given any $\sigma > 0$, the strong duality holds for \eqref{prob-minmax}, i.e.,
+\begin{equation}\label{lemma:strong}
+        \min_{\bm{y},\bm{z},\bm{r},\bm{v}} \max_{\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4 } \Phi(\bm{y},\bm{z},\bm{r},\bm{v};\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4)=     \max_{\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4 }  \min_{\bm{y},\bm{z},\bm{r},\bm{v}} \Phi(\bm{y},\bm{z},\bm{r},\bm{v};\bm{x}_1,\bm{x}_2,\bm{x}_3,\bm{x}_4).
+\end{equation}
+where both sides of \eqref{lemma:strong} are equivalent to problem \eqref{general}.
+\end{lemma}
+
+\subsection{A semismooth Newton method with global convergence} \label{2-2}
+It follows from the Moreau envelope theorem \citep{beck2017first} that $e_{\sigma}h^*$, $e_{\sigma}\delta_{\mathcal{Q}}^*$, and $e_{\sigma}\delta_{\mathcal{K}}^*$ are continuously differentiable, which implies that $\Phi$ is also continuously differentiable. Hence the gradient of the saddle point problem can be represented by
+\begin{equation} \label{eqn:gradient}
+\begin{aligned}
+\nabla_{\bm{y}} \Phi_{\sigma}(\bm{w}) & = \mathcal{A} \text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) - \Pi_{ \mathcal{P}_2}(\bm{x}_1 - \sigma \bm{y} ), \\
+\nabla_{\bm{z}} \Phi_{\sigma}(\bm{w}) & = \mathcal{B} \text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) - \text{prox}_{\sigma f}(\bm{x}_2 - \sigma \bm{z}), \\
+\nabla_{\bm{r}} \Phi_{\sigma}(\bm{w}) & = \text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) - \Pi_{ \mathcal{P}_1}(\bm{x}_3 - \sigma \bm{r} ), \\
+\nabla_{\bm{v}} \Phi_{\sigma}(\bm{w}) & = - \mathcal{Q} \text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) +
+\mathcal{Q}\bm{v}, \\
+\nabla_{\bm{x}_1} \Phi_{\sigma}(\bm{w}) & = \frac{1}{\sigma }\Pi_{\mathcal{P}_2}(\bm{x}_1 - \sigma \bm{y} ) - \frac{1}{\sigma} \bm{x}_1, \\
+\nabla_{\bm{x}_2} \Phi_{\sigma}(\bm{w}) & = \frac{1}{\sigma }\text{prox}_{\sigma f}(\bm{x}_2 - \sigma \bm{z}) - \frac{1}{\sigma} \bm{x}_2, \\
+\nabla_{\bm{x}_3} \Phi_{\sigma}(\bm{w}) & = \frac{1}{\sigma }\Pi_{\mathcal{P}_1}(\bm{x}_3 - \sigma \bm{r} ) - \frac{1}{\sigma} \bm{x}_3, \\
+\nabla_{\bm{x}_4} \Phi_{\sigma}(\bm{w}) & = \frac{1}{\sigma }\text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) - \frac{1}{\sigma} \bm{x}_4. \\
+\end{aligned}
+\end{equation}
+We note that if $f^*$ is differentable, $\bm{x}_2$ does not exist and the corresponding gradient is $\nabla_{\bm{z}} \Phi_{\sigma}(\bm{w}) = \mathcal{B} \text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) ) - \nabla f^*(-\bm{z})$. 
+
+The nonlinear operator $F(\bm{w})$ is defined as
+\begin{small}
+\begin{equation} \label{eq:def:F}
+     F(\bm{w}) =
+     \begin{pmatrix}
+          \nabla_{\bm{y}} \Phi(\bm{w});\nabla_{\bm{z}} \Phi(\bm{w});\nabla_{\bm{r}} \Phi(\bm{w});\nabla_{\bm{v}} \Phi(\bm{w});
+         - \nabla_{\bm{x}_1} \Phi(\bm{w});
+         - \nabla_{\bm{x}_2} \Phi(\bm{w});
+         - \nabla_{\bm{x}_3} \Phi(\bm{w});
+         - \nabla_{\bm{x}_4} \Phi(\bm{w})
+     \end{pmatrix}.
+\end{equation}
+\end{small}
+It is shown in \cite[Lemma 3.1]{deng2025augmented} that $\bm{w}_*$ is a solution of the saddle point problem \eqref{prob-minmax} if and only if it satisfies $F(\bm{w}_*) = 0.$. Hence the saddle point problem can be transformed into solving the following nonlinear equations:
+\begin{equation} \label{ssn-eqn}
+    F(\bm{w}) =0.
+\end{equation}
+
+ \begin{definition} \label{def:Jacobian}
+    Let $F$ be a locally Lipschitz continuous mapping. Denote by $D_F$ the set of differentiable points of $F$. The B-Jacobian of $F$ at $\bm{x}$ is defined by
+\[
+\partial_B F(\bm{w}) := \left\{\lim_{k \rightarrow \infty} J(\bm{w}^k)\, |\,  \bm{w}^k \in D_F, \bm{w}^k \rightarrow \bm{w}\right\},
+\]
+where $J(\bm{w})$ denotes the Jacobian of $F$ at $\bm{w} \in D_F$. The set $\partial F(\bm{w})$ = $co(\partial_B F(\bm{w}))$ is called Clarke subdifferential, where $co$ denotes the convex hull.
+    
+    $F$ is semismooth  at $\bm{w}$ if $F$ is directionally differentiable at $\bm{w}$ and  for any $\bm{d}$, $J \in \partial F(\bm{w}+\bm{d})$, it holds that
+$ \| F(\bm{w}+\bm{d}) -  F(\bm{w}) - J\bm{d} \| = o(\|\bm{d}\|), \;\; \bm{d} \rightarrow 0. $
+$F$ is said to be strongly semismooth at $\bm{w}$ if $F$ is directionally differentiable at $\bm{w}$ and
+$\| F(\bm{w}+\bm{d}) -  F(\bm{w}) - J\bm{d} \| = O(\|\bm{d}\|^2), \;\; \bm{d} \rightarrow 0.$
+We say $F$ is semismooth (respectively, strongly semismooth) if $F$ is semismooth (respectively, strongly semismooth) for any $\bm{w}$ \cite{mifflin1977semismooth}. 
+\end{definition}
+
+Note that for a convex function $h$, its proximal operator $\prox_{th}$ is Lipschitz continuous. Then, by Definition \ref{def:Jacobian}, we define the following sets:
+ \begin{equation}
+ \begin{aligned}
+ D _{\Pi_1}  &:=  \partial \text{prox}(\bm{x}_3 - \sigma \bm{r}), \;     D _{\Pi_2}  = \partial\text{prox}(\bm{x}_1 - \sigma \bm{y}), \;  D_{f}  := \partial  \prox_{\sigma f}( \bm{x}_2 - \sigma \bm{z}), \\
+ D_{p} &:=   \partial \prox_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} )).
+\end{aligned}
+ \end{equation}
+Hence the corresponding generalized Jacboian can be represented by
+ \begin{equation}\label{equ:jaco}
+      \hat{\partial} F(\bm{w}) : = \left\{ \left(
+    \begin{array}{cc}
+    \mathcal{H}_{\bm{11}}     & \mathcal{H}_{\bm{12}}  \\
+    -\mathcal{H}_{\bm{12}}^{\top}     & \mathcal{H}_{\bm{22}}   \\
+    \end{array}
+    \right)\right\},
+\end{equation}
+where
+\begin{equation} \label{gradient:F}
+\begin{aligned}
+\mathcal{H}_{\bm{11}} &= \sigma \left( \mathcal{A}, \mathcal{B},\mathcal{I},-\mathcal{Q} \right)^{\mathrm{T}}D_p \left( \mathcal{A}, \mathcal{B},\mathcal{I},-\mathcal{Q} \right) + \sigma \text{blkdiag}(D_{\Pi_1},D_{f},D_{\Pi_2},\mathcal{Q}),\\
+\mathcal{H}_{\bm{12}} &=  \left[\left(- \text{blkdiag} \left( [D_{\Pi_1} ,D_{f} ,D_{\Pi_2} ] \right) ; \bm{0} \right) ,(\mathcal{A},\mathcal{B},\mathcal{I},-\mathcal{Q})^{\mathrm{T}}D_{p} \right], \\
+\mathcal{H}_{\bm{22}} &= \text{blkdiag}\left\{\frac{1}{\sigma}(\mathcal{I}-D_{\Pi_1}),\frac{1}{\sigma}(\mathcal{I}-D_{h } ),\frac{1}{\sigma}(\mathcal{I}-D_{\Pi_2}),\frac{1}{\sigma}(\mathcal{I}-D_{p}) \right\}.
+\end{aligned}
+\end{equation}
+ It follows from \citep{hiriart1984generalized} and the definition of $ \hat{\partial} F$ that
+$ \hat{\partial} F(\bm{w})[\bm{d}] =  \partial F(\bm{w})[\bm{d}]$ for any $\bm{d}$. Hence, $\hat{\partial} F(\bm{w})$ is valid to construct a Newton equation to solve $F(\bm{w}) = 0$.
+
+We next introduce the computational procedure of the semismooth Newton step at the $k$-th iteration. We first take
+ an element of the Clarke's generalized Jacobian defined by \eqref{equ:jaco} as $J^k \in \hat{\partial}F(\bm{w}^k)$. Given a fixed integer $i_{\max}$ and constants $\kappa > 0$, $\gamma > 1$, we choose the integer $i = 0,\cdots,i_{\max}$ to find a suitable $\tau_{k,i} = \kappa \gamma^i \|F(\bm{w}^k)\|$. 
+Specifically, we compute the semismooth Newton direction $\bm{d}^{k,i}$ as the solution of the following linear system
+\be \label{eq:ssn} (J^k + \tau_{k,i} \mathcal{I}) \bm{d}^{k, i} = -  F(\bm{w}^k) + \bm{\varepsilon}^k, \ee
+where $\bm{\varepsilon}^k$ is the residual term to measure the inexactness of the equation.  We require that there exists a constant $C_{\bm{\varepsilon}} > 0$ such that $\|\bm{\varepsilon}^k\| \le C_{\bm{\varepsilon}} k^{-\beta}$, $\beta \in (1/3 ,1]$ The correction term $\tau_{k,i}I$ is added to $J^k$ since  $J^k$ may only be positive semidefinite. We require that the shift term $\tau_{k,i} \mathcal{I}$ guarantees the existence and uniqueness of $\bm{d}^{k,i}$. The trial step is defined by
+\be \label{eq:ssn-step} 
+  \bar{\bm{w}}^{k,i}  = \bm{w}^k + \bm{d}^{k,i},
+\ee
+We next present a globalization scheme to ensure convergence using pure semismooth Newton steps. It uses both line search on the shift parameter $\tau_{k,i}$ and the nonmonotone decrease on the residuals $F(\bm{w}^k)$. Specifically, for an integer $\zeta\geq 1$, $c, \nu \in (0,1), i_{\max} >0$, we check the following nonmonotone decrease condition
+\begin{align}
+    \|F(\bar{\bm{w}}^{k,i})\|  & \leq  \nu \max_{\max(1, k-\zeta+1) \leq j \leq k}\|F(\bm{w}^j)\| + \varsigma_k, \label{eq:decrease-1} 
+\end{align}
+where $\{ \bm{\varsigma}_i \}$ is a nonnegative sequence such that $ \sum_{i=1}^{\infty} \bm{\varsigma}_i^2 < \infty.$ The iterative update \(\bm{w}^{k+1} = \bar{\bm{w}}^{k,i}\) is performed if condition \eqref{eq:decrease-1}. Otherwise, if \eqref{eq:decrease-1} does not hold for $i >i_{\max}$,  we set $\tau_{k,i}$ such that
+\begin{align}
+    \tau_{k,i} & \geq c k^{\beta} \label{eq:decrease-2},
+  \end{align}  
+  where $c > 0$ is a given constant.  Condition \eqref{eq:decrease-1} assesses whether the residuals exhibit a nonmonotone sufficient descent property, which allows for temporary increases in residual values. The parameters \(\zeta\) and \(\nu\) govern the number of previous points referenced in this evaluation, with larger values of \(\zeta\) and \(\nu\) leading to more lenient acceptance criteria for the semismooth Newton step. If \eqref{eq:decrease-1} is not satisfied, the regularization parameter \(\tau_{k,i}\) is adjusted according to \eqref{eq:decrease-2}, ensuring a monotonic decrease in the residual sequence \(\{F(\bm{w}^k)\}\) through an implicit mechanism. This mechanism combines a regularized semismooth Newton step with a nonmonotone line-search strategy applied to \(\tau_{k,i}\). The nonmonotone strategy introduces flexibility by imposing a relatively relaxed condition, which results in the acceptance condition \eqref{eq:decrease-1} with the initial \(\tau_{k,0}\) being satisfied in nearly all iterations, as empirically validated by our numerical experiments. Furthermore, our experimental results demonstrate that \eqref{eq:decrease-1} is frequently satisfied when \(F(\bm{w})\) is sufficiently small, leading to superlinear convergence. The complete algorithmic procedure is detailed in Algorithm \ref{alg:ssn}.
+
+\begin{algorithm}[htbp]
+\caption{A semismooth Newton method for solving \eqref{ssn-eqn}.} 
+% \label{alg:ssn}
+\label{alg:ssn}
+\begin{algorithmic}[1]
+\REQUIRE The constants $\gamma > 1$, $\nu \in (0,1)$, $\beta \in (1/2, 1]$, $\kappa >0$, an integer $\zeta \geq 1$, and an initial point $\bm{w}^0 $, set $k = 0$.
+\WHILE {\emph{stopping condition not met}}
+\STATE Compute $F(\bm{w}^k)$ and select $J(\bm{w}^k) \in \hat{\partial} F(\bm{w}^k)$. 
+\STATE Find the approate $\tau_{k,i}$ $i \ge 0$ such that $\bar{\bm{w}}^{k,i}$ in \eqref{eq:ssn-step} satisfies \eqref{eq:decrease-1} or \eqref{eq:decrease-2}.
+\STATE Set $\bm{w}^{k+1} = \bar{\bm{w}}^{k,i}$.
+\STATE Set $k=k+1$.
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+
+
+
+The global convergence of Algorithm \ref{alg:ssn} is summarized in the following theorem \cite{deng2025augmented}.
+
+\begin{theorem} \label{thm:global-con}
+Suppose that Assumption \ref{assum} holds. Let $\{\bm{w}^k\}$ be the sequence generated by Algorithm \ref{alg:ssn}. The residual $F(\bm{w}^k)$ converges to $0$, i.e., \be \label{eq:con-w} \lim_{k \rightarrow \infty} \; F(\bm{w}^k) = 0. \ee 
+\end{theorem}
+
+For local convergence, we first introduce the notion of partial smoothness \cite{lewis2022partial} in the following.
+\begin{definition}[$C^p$-partial smoothness]\label{def-psmooth}
+Consider a proper closed function $\phi:\R^n\rightarrow \bar{\mathbb{R}}$ and a $C^p$ $(p \ge 2)$ embedded submanifold $\Mcal$ of $\R^n$. The function $\phi$ is said to be $C^p$-partly smooth at $x \in \Mcal$ for $v \in \partial \phi(x)$ relative to $\Mcal$ if
+\begin{itemize}
+    \item[(i)] Smoothness: $\phi$ restricted to $\mathcal{M}$ is $C^{p}$-smooth near $x$.
+    \item[(ii)] Prox-regularity: $\phi$ is prox-regular at $x$ for $v$. 
+    
+    \item[(iii)] Sharpness: $\mathrm{par}\, \partial_p \phi(x) = N_{\Mcal} (x)$, where $\partial_p $ denotes the set of proximal subgradients of $\phi$ at point $x$, $\mathrm{par}\, \Omega$ is the subspace parallel to $\Omega$ and $N_{\Mcal} (x)$ is the normal space of $\Mcal$ at $x$.
+    \item[(iv)] Continuity: There exists a neighborhood $V$ of $v$ such that the set-valued mapping $V \cap \partial \phi$ is inner semicontinuous at $x$ relative to $\mathcal{M}.$
+\end{itemize}
+\end{definition} 
+
+One usage of the partial smoothness is connecting the relative interior condition in (iii) with SC to derive certain smoothness in nonsmooth optimization \cite{bareilles2023newton}. 
+In addition to the partial smoothness, the local error bound condition \cite{yue2019family} is a powerful tool for analyzing convergence in the absence of nonsingularity.
+\begin{definition}
+We say the local error bound condition holds if there exist $\gamma_l > 0$ and $\varepsilon > 0$ such that for all $\bm{w}$ with ${\rm dist}(\bm{w},\bm{W}_*)\le \varepsilon$, it holds that
+\begin{equation} 
+    \label{eq:eb} \| F(\bm{w}) \| \geq \gamma_{l} {\rm dist}(\bm{w}, \bm{W}_*), 
+\end{equation}
+    where $\bm{W}_*$ is the solution set of $F(\bm{w}) = 0$ and ${\rm dist}(\bm{w}, \bm{W}_*):=\argmin_{\bm{u} \in \bm{W}_*} \|\bm{w} - \bm{u}\|$. 
+\end{definition}
+
+Using the partial smoothness and local error bound condition, we present the local superlinear convergence \cite{deng2025augmented}. 
+
+
+
+\begin{theorem} \label{thm:local}
+Suppose Assumption \ref{assum} holds and $p(\bm{x}), f(\mathcal{B}(\bm{x}))$ are partial smooth. For any optimal solution $\bm{w}_*$, if the SC is satisfied at $\bm{w}_*$, $F$ defined by \eqref{eq:def:F} is locally $C^p-1$-smooth
+in a neighborhood of $\bm{w}_*$. Furthermore, If $\bm{w}^k$ is close enough to $\tilde{\bm{w}}_* \in \bm{W}^*$ where the SC is satisfied, then $\bm{w}^k$ converges to $\tilde{\bm{w}}_*$ q-superlinearly.
+\end{theorem}
+
+ Notably, the partial smoothness and the Slater's condition are commonly encountered in various applications.
+    Even though the local error bound condition may appear more restrictive, such a condition is satisfied when the functions $p$ and $f$ are piecewise linear-quadratic such as $\ell_1,\ell_{\infty}$ norm and box constraint. It is satisfied for most of the functions listed in Table \ref{combined-table}.
+\subsection{An efficient implementation to solve the linear system} \label{2-3}
+Ignoring the subscript $k$, the linear system can be represented by:
+\begin{equation}\label{eq:ssn-xz}
+\left(
+    \begin{array}{cc}
+    \mathcal{H}_{\bm{11}} + \tau \mathcal{I}     & \mathcal{H}_{\bm{12}}  \\
+    -\mathcal{H}_{\bm{12}}^T     & \mathcal{H}_{\bm{22}} + \tau \mathcal{I} \\
+    \end{array}
+    \right) \left(
+    \begin{array}{c}
+    \bm{d}_{\bm{1}}       \\
+    \bm{d}_{\bm{2}}       \\
+    \end{array}
+    \right) = \left(
+    \begin{array}{c}
+    -\tilde{F}_{\bm{1}}       \\
+    -\tilde{F}_{\bm{2}}    \\
+    \end{array}
+    \right),
+\end{equation}
+where $\tilde{F} = F - \bm{\varepsilon}, F = (F_1,F_2)$,  $F_1 = ( F_{\bm{y}},F_{\bm{z}}, F_{\bm{r}},F_{\bm{v}} ), F_2 = (F_{\bm{x}_1},F_{\bm{x}_2}, F_{\bm{x}_3}, F_{\bm{x}_4} ),  \bm{d}_1 = (\bm{d}_{\bm{y}},\bm{d}_{\bm{z}},\bm{d}_{\bm{r}},\bm{d}_{\bm{v}} ), \bm{d}_2 =( \bm{d}_{\bm{x}_1},\bm{d}_{\bm{x}_2},\bm{d}_{\bm{x}_3},\bm{d}_{\bm{x}_4} ).$
+For a given $\bm{d}_{\bm{1}}$, the direction $\bm{d}_{\boldsymbol{2}}$ can be calculated by
+ \begin{equation} \label{cor:z}
+ \bm{d}_{\bm{2}} = (\mathcal{H}_{\bm{22}} + \tau \mathcal{I})^{-1}(\mathcal{H}_{\bm{12}}^{\top}\bm{d}_{\bm{1}}-F_{\bm{2}}).
+  \end{equation}
+Hence, the linear equation \eqref{eq:ssn-xz} can be reduced to a  linear system with respect  to $\bm{d}_{\bm{1}}$:
+\begin{equation} \label{eqn:simp}
+    \widetilde{\mathcal{H}}_{\bm{11}} \bm{d}_{\bm{1}} = -\widetilde{F}_{\bm{1}},
+\end{equation}
+where  $\widetilde{F}_{\bm{1}}:=\mathcal{H}_{\bm{12}} (\mathcal{H}_{\bm{22}}+\tau \mathcal{I})^{-1}F_{\bm{2}} - F_{\bm{1}}$ and $\widetilde{\mathcal{H}}_{\bm{11}}:= (\mathcal{H}_{\bm{11}} +
+ \mathcal{H}_{\bm{12}}(\mathcal{H}_{\bm{22}} + \tau \mathcal{I})^{-1}\mathcal{H}_{\bm{12}}^{\top} + \tau \mathcal{I}).$ The definition of  $\mathcal{H}_{\bm{12}}$ in \eqref{equ:jaco} yields
+\begin{equation} \label{eqn:equation}
+\widetilde{\mathcal{H}}_{\bm{11}} =
+  \left( \mathcal{A}, \mathcal{B},\mathcal{I},\mathcal{Q} \right)^{\mathrm{T}} \overline{D}_p \left( \mathcal{A}, \mathcal{B},\mathcal{I},\mathcal{Q} \right) + \sigma \text{blkdiag}(\overline{D}_{\Pi_1},\overline{D}_{\mathrm{F}},\overline{D}_{\Pi_2}, \mathcal{Q})
+\end{equation}
+      where $\text{blkdiag}$ denotes block diagonal operator, $ \overline{D}_{p} = \sigma D_{p} + \tilde{D }_{p}, \tilde{D}_{p} = D_{p} (\frac{1}{\sigma}(\mathcal{I} - D_{p}) + \tau \mathcal{I})^{-1} D_{p}, \overline{D}_{\Pi_1},\overline{D}_{\mathrm{F}}$ and $\overline{D}_{\Pi_2}$ are defined analogously.  Hence, $\left( \mathcal{A}, \mathcal{B},\mathcal{I},\mathcal{Q} \right) \bm{d}_1$ can be computed first and shared among all components. If the corresponding solution is sparse or low-rank, then the special structures of $\overline{D}_{p}$ can further be used to improve the computational efficiency. Furthermore, if $\tilde{\mathcal{H}}_{11}$ only has one variable, we can solve the equation \eqref{eqn:simp} using Cholesky factorization method.
+      
+We also note that some variables in $\bm{w}$ may not exist if the function or constraint does not exist in \eqref{general}. We present the existence condition of variables in the following.
+\begin{itemize}
+    \item $\bm{y}$ exist if and only if $\mathcal{P}_2$ is nontrival. $\bm{x}_1$ exist if and only if $\mathcal{P}_2$ is not a singleton set.
+    \item $\bm{z}$ exist if and only if $f$ exist. $\bm{x}_2$ exist if and only if $f$ exist and is nonsmooth.
+    \item $\bm{r}$ and $\bm{x}_3$ exist if and only if $\mathcal{P}_1$ is nontrival.
+    \item $\bm{v}$ exist if and only if $\mathcal{Q}$ is nontrival.
+\end{itemize}
+For example, for Lasso problem, $p(\bm{x}) = \|\bm{x}\|_1, f(\mathcal{B}(\bm{x})) = \frac{1}{2} \|\mathcal{B}(\bm{x}) - \bm{b}\|^2, \bm{c} = \bm{0}, \mathcal{Q} = \bm{0}, \mathcal{P}_1 = \mathcal{P}_2 = \oslash.$ The valid variables are $\bm{z}$ and $\bm{x}_4$, i.e., one primal variable and one dual variable.
+Consequently, for problems that $\mathcal{H}_{11}$ only has one primal variable such as Lasso, SDP, and SOCP, etc, we can solve the linear system using direct methods such as Cholesky factorization at low cost.
+
+% The semismooth Newton method 
+% is designed to be a generalization of the standard Newton method in the sense that the coefficient matrix of the linear system uses an element of the Clarke's generalized Jacobian. One major difference  is that the semismooth Newton direction is not necessarily a descent direction corresponding to certain merit functions.  
+
+
+\subsection{Pratical implementations} \label{2-4}
+ To ensure that algorithm \ref{alg:ssn} can have a better performance on various problems, we present some implementation details of Algorithm \ref{alg:ssn} used to solve \eqref{ssn-eqn} in this section.  
+\subsubsection{Line search for $\bm{d}^{k}$}
+In some cases, condition\eqref{eq:decrease-1} may not be satisfied with the full regularized Newton step in \eqref{eq:ssn-step}. 
+ The sufficient decrease property \eqref{eq:decrease-1} may be easier to satisfy when a line search strategy is used for problems such as Lasso-type problems. Specifically, we choose appropriate $\alpha$ and $ \tilde{\bm{w}}^{k,i}  = \bm{w}^k + \alpha \bm{d}^{k,i}$ such that condition
+ \begin{equation} \label{eq:decrease-11}
+  \|F(\tilde{\bm{w}}^{k,i})\|   <  \nu \max_{\max(1, k-\zeta+1)} \|F(\bm{w}^j)\| + \varsigma_k, 
+ \end{equation}
+ holds, we then set $\bm{w}^{k+1} = \tilde{\bm{w}}^{k,i}.$  If the \eqref{eq:decrease-11} is not satisfied after several line searches, then we set $\bm{w}^{k+1} = \bar{\bm{w}}^{k, i}$ with \eqref{eq:decrease-2} holds. We note that since it needs one additional proximal operator calculation every time the line search property is only effective for $p(x)$ with its proximal operator efficiently can be calculated efficiently.
+\subsubsection{Update regularization parameter $\kappa$ } In the definition of $\tau_{k,i}$, $\kappa$ is of vital importance to control the quality of $\bm{w}^k.$  
+% Generally speaking, $\kappa_k$ should be large at the early stage of iteration to make the linear system regularized and should be small when the iteration point is near the solution to guarantee superlinear convergence. 
+When
+$\kappa$ is small, the Newton equation is accurate, but $\bm{d}^k$ may not be a good direction. For an iterate $\bm{w}^k$, $\bm{d}_1^k$ and $\bm{d}_2^k$ is a descent or ascent direction if for the corresponding primal and dual variables if $\iprod{\bm{d}_1^k}{F_1} < 0$ and $\iprod{\bm{d}_2^k}{F_2} < 0$ respectively. Taking into account this situation, we define the ratio 
+\begin{equation} \label{ratio}
+    \rho_k : = \frac{ -\iprod{\bm{d}^k}{F(\bm{w}^{k+1})}}{\|\bm{d}^k\|_2^2}
+\end{equation}
+to decide whether $\bm{d}_k$ is a bad direction and how to update $\kappa_k.$ If $\rho_k$ is small, it is usually a signal of a bad Newton step and we increase $\kappa_k$. Otherwise, we decrease it. Specifically, the parameter $\kappa_k$ is updated as
+\begin{equation}
+    \kappa_{k+1} = \begin{cases}
+        \max\{\gamma_1\kappa_k,\underline{\tau}\}, & \mbox{if}\, \rho_k \ge \eta_2,  \\
+        \gamma_2 \kappa_k, & \mbox{if}\,  \eta_2 > \rho_k \ge \rho_1, \\
+        \min\{\gamma_3\kappa_k,\bar{\tau}\},  & \mbox{otherwise},
+    \end{cases}
+\end{equation}
+where $\gamma_1 < \gamma_2 < 1, \gamma_3 > 1$ are chosen parameters and $\underline{\tau}, \bar{\tau} $  are two predifined positive constants. 
+\subsubsection{Update penalty parameter $\sigma$}
+We also adaptively adjust the penalty factor $\sigma$ based on the primal and dual infeasibility. Specifically, if the primal infeasibility exceeds the dual infeasibility over a certain number of steps, we decrease $\sigma$; otherwise, we increase it. Specifically, We next show our strategies for how to update $\sigma$ incorporating the iteration information. We mainly examine the ratios of primal and dual infeasibilities of the last few steps defined by
+\begin{equation} \label{ratio-adaptive}
+ \omega^k = \frac{\text{geomean}_{k-l \leq j \leq k} \eta_P^j}{\text{geomean}_{k-l \leq j \leq k } \eta_D^j}, 
+ % \quad \text{and} \quad \omega_{\eta_q}^k = \frac{\text{mean}_{k-5 \leq j \leq k} \eta_q^j}{\text{mean}_{k-25 \leq j \leq k-20} \eta_q^j}
+\end{equation}
+where the primal infeasibility $\eta_p$ and the dual infeasibility $\eta_d$ are defined by
+\begin{equation}
+\eta_{P} = \frac{\| \mathcal{A}(\bm{x}) - \Pi_{\mathcal{P}_2}(\mathcal{A}(\bm{x}) - \bm{y} ) \|  }{1+\|
+\bm{x}\|} ,\quad \text{and} \quad 
+ \eta_D = \frac{\| \mathcal{A}^*(\bm{y}) + \mathcal{B}^*(\bm{z}) + \bm{s} - \mathcal{Q}(\bm{v})- \bm{c}\|  }{1 + \|\bm{c}\|},
+\end{equation}
+and $l$ is a hyperparameter.
+If these reduced ratios are larger than some given constants, we say that the ADMM performs bad and go to the semismooth Newton steps. For every $l$ steps, we check the $\omega^k$. If $\omega^k$ is larger (or smaller) than a constant $\delta$, we decrease (or increase) the penalty parameter $\sigma$ by a multiplicative factor $\gamma$ (or $1/\gamma$) with $0 < \gamma < 1$. To prevent $\sigma$ from becoming excessively large or small, an upper and lower bound are imposed on $\sigma$. This strategy has been demonstrated to be effective in \cite{li2018semismooth}.
+
+% In practice, the penalty parameter $\sigma$ of the ADMM is often updated adaptively to achieve faster convergence. One strategy is to tune $\sigma$ to balance the primal infeasibility $\eta_p$ and the dual infeasibility $\eta_d$. In particular, the $\eta_p^j$ and $\eta_d^j$ denote the primal and dual infeasibilities at the $j$th iteration. 
+
+
+\section{Properties of Proximal Operators} \label{3}
+According to \eqref{cor:z}, we need the explicit calculation process of $(\frac{1}{\sigma}(\mathcal{I} - D_p) + \tau_4 \mathcal{I})^{-1}$ and $\sigma D_p+  D_p(\frac{1}{\sigma}(\mathcal{I} - D_p) + \tau_4 \mathcal{I})^{-1}D_p $. Furthermore, if $\bm{x}$ and $\mathcal{B}(\bm{x})$  are replaced by $\bm{x} - \bm{b}_1$ or $\mathcal{B}(\bm{x}) - \bm{b}_2$ respectively, the corresponding needs to be corrected by a shift term. Some proximal operators such as semidefinite cone or $\ell-$infty norm are already known in the literature.  We demonstrate how to handle the shift term and the computation details of other proximal operators in this section.
+
+ \subsection{Handling \texttt{shift} term}
+For problems that have \texttt{shift} term such as $p(\bm{x} - \bm{b}_1)$ or $f(\mathcal{B}(\bm{x}) - \bm{b}_2)$, the corresponding dual problem of \eqref{general} is
+\begin{equation} \label{dual2}
+    \begin{aligned}
+\min_{\bm{y},\bm{z},\bm{s},\bm{r},\bm{v}} \quad & \delta_{\mathcal{P}_2}^*(-\bm{p}) + f^*(\bm{-q}) - \iprod{\bm{b}_2}{\bm{q}} - \iprod{\bm{b}_1}{\bm{s}} +  p^*(-\bm{s}) + \frac{1}{2} \iprod{\mathcal{Q}\bm{v}}{\bm{v}} + \delta_{\mathcal{P}_1}^*(-\bm{t}), \\
+    \st \quad & \mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z} + \bm{s} - \mathcal{Q}\bm{v} + \bm{r} = \bm{c},~~\bm{y}=\bm{p},~~\bm{z}=\bm{q},~~\bm{r}=\bm{t}.
+    \end{aligned}
+\end{equation}
+If $f^*$ is differentiable, the corresponding gradient is $-\nabla f^*(-\bm{q}) - \bm{b}_2$. If $f$ is nonsmooth, it follows from the property of the proximal operator that $\bm{q} = \text{prox}_{f^*/\sigma}(\bm{x}_2/\sigma - \bm{z} - \bm{b}_2/\sigma)$. Hence, we only need to replace the $\text{prox}_{\sigma f}(\bm{x}_2 - \sigma \bm{z})$ in \eqref{eqn:gradient} of $\text{prox}_{\sigma f} (\bm{x}_2 - \sigma (\bm{z} - \bm{b}_2) ).$ For $p^*(-\bm{s})$, the corresponding term $\text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} ) )$ is replaced by $\text{prox}_{\sigma p}(\bm{x}_4 + \sigma(\mathcal{A}^*(\bm{y}) + \mathcal{B}^*\bm{z}- \mathcal{Q}\bm{v} + \bm{r} - \bm{c} - \bm{b}_1) ) - \bm{b}_1$.  We do not need to introduce slack variables when adding \texttt{shift} term to $p(\bm{x})$ or $f(\mathcal{B}(\bm{x}))$.
+% \subsection{$\ell_1$ norm}
+% when $\mathcal{P}_1 = \oslash, \mathcal{P}_2 = \oslash$ and $ \mathcal{Q} =  \oslash$, for norm functions such as $\ell_1$ and $\ell_{\infty}$ where the generalized Jacobian is executed elementwise, it follows that the linear system is
+% \[
+% (\mathcal{B} \tilde{D}_1 \mathcal{B}^{\mathrm{T}}  + \tilde{D}_2 + \tau I) d_{\bm{y}} = -\tilde{F}_{\bm{y}}.
+% \]
+% Since $\tilde{D}_2$ is excuated elementwise
+\subsection{ $\ell_2$ norm}
+
+For $\ell_2$ norm, i.e., $p(\bm{x}) = \lambda \|\bm{x}\|_2$, the corresponding proximal operator is 
+\[
+\prox_{\lambda \|\cdot \|_2}(\bm{x}) =  \begin{cases}
+        \bm{x} - \lambda \bm{x} /\|\bm{x}\|, & \mbox{if } \|\bm{x}\| > \lambda, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+\]
+It follows from the SMW formula
+$
+(A - \bm{uu}^{\mathrm{T}})^{-1} = A^{-1} + \frac{A^{-1 }\bm{uu}^{\mathrm{T}}A^{-1} }{1 - \bm{u}^{\mathrm{T}}A^{-1}\bm{u} }
+$
+that for $D \in \partial \text{prox}_{\lambda \|\cdot \|_2} \|\cdot \|_2$, 
+\[
+\begin{aligned}
+ \left(\tau I + \frac{1}{\sigma}(I - D) \right)^{-1} & =  \left(\tau I  + \lambda(I - \bm{x}\bm{x}^{\mathrm{T}}/\|\bm{x}\|^2 )/\|\bm{x}\|\right)^{-1}  = \frac{1}{(\tau + \frac{\lambda }{ \|\bm{x}\|})}(I + \frac{\lambda}{\tau  \|\bm{x}\|} \bm{x}^{\mathrm{T}} \bm{x} / \|\bm{x}\|^2 ).
+% & D(\tau I + \frac{1}{\sigma}(I - D))^{-1} = (I - )
+\end{aligned}
+\]
+Hence the following equality holds.
+\[
+\begin{aligned}
+D\left(\tau I + \frac{1}{\sigma}(I - D) \right)^{-1} &= \left( (1 - \frac{\lambda \sigma}{\|\bm{x}\|})I + (\frac{1}{\tau} + \sigma) \frac{\lambda}{\|\bm{x}\|} \bm{x}\bm{x}^{\mathrm{T}}/\|\bm{x}\|^2 \right) ( \frac{1}{\tau + \frac{\lambda}{\|\bm{x}\|} } ) ,\\
+\sigma D + D\left(\tau I + \frac{1}{\sigma}(I - D) \right)^{-1}D &=  \left( \sigma(1 - \frac{\sigma \lambda}{\|\bm{x}\|}) + \left( \frac{1}{\tau + \frac{\lambda}{\|\bm{x}\|} } \right) \left(1 - \frac{\sigma \lambda}{\|\bm{x}\|} \right)^2 \right) I\\
+& \qquad + \left(( \frac{1}{\tau + \frac{\lambda}{\|\bm{x}\|} } ) (3 \frac{\sigma \lambda}{\|\bm{x}\|} - \frac{\sigma^2 \lambda^2 }{\|\bm{x}\|^2}) + \sigma \frac{\sigma \lambda}{\|\bm{x}\|}\right)\bm{x}\bm{x}^{\mathrm{T}}/\|\bm{x}\|^2.
+\end{aligned}
+\]
+Consequently, the operators in \eqref{cor:z} and \eqref{eqn:simp} can be represented as an identity matrix plus a rank one correction.
+ For $p(\bm{x}) = \delta_{\|\bm{x} \|_2 \le \lambda}(\bm{x})$, the derivation is similar and we omit it.
+\subsection{Second order cone}
+Let \( Q^n \subseteq \mathbb{R}^n \) denote the second-order cone (SOC), where a vector \( \bm{x} \in Q^n \) is structured as \( \bm{x} = [x_0; \bar{\bm{x}}] \) with \( x_0 \in \mathbb{R} \) and \( \bar{\bm{x}} \in \mathbb{R}^{n-1} \). The SOC is characterized by the condition \( Q^n = \left\{ \bm{x} \in \mathbb{R}^n \,:\, \| \bar{\bm{x}} \| \leq x_0 \right\} \). For \( \bm{x} \in \text{int}(Q) \), the determinant is defined as \( \det(\bm{x}) = x_0^2 - \| \bar{\bm{x}} \|^2 \), and the inverse of \( \bm{x} \), when \( \det(\bm{x}) \neq 0 \), is given by \( \bm{x}^{-1} = \frac{1}{\det(\bm{x})} [x_0 \;\, -\bar{\bm{x}}^\top]^\top \). One generalized Jacobian $D$ of the second-order cone is:
+
+\begin{equation} \label{genJacboian:soc}
+D = 
+\begin{cases} 
+I, & \text{if } x_0 > \| \bar{x} \|, \\
+0, & \text{if } x_0 < -\| \bar{x} \|, \\
+\frac{1}{2} \left[ \frac{\bar{x}}{\| \bar{x} \|} \left( 1 + \frac{x_0}{\| \bar{x} \|} \right) I - \frac{x_0}{\| \bar{x} \|^3} \bar{x} \bar{x}^\top \right], & \text{otherwise.}
+\end{cases}
+\end{equation}
+For the third case, the generalized Jacboian of second order cone admits a low-rank decomposition:
+\[
+\begin{aligned}
+D &= \frac{1}{2} \left( 1 + \frac{x_0}{\| \bar{x} \|} \right) I + \frac{1}{2} \left( 1 - \frac{x_0}{\| \bar{x} \|} \right) \left( \frac{\sqrt{2}}{2} \frac{\bar{x}}{\| \bar{x} \|} \right) \left( \frac{\sqrt{2}}{2} \frac{\bar{x}^T}{\| \bar{x} \|} \right) + \left( -\frac{1}{2} \right) \left( 1 + \frac{x_0}{\| \bar{x} \|} \right) \left( \frac{\sqrt{2}}{2} \frac{\bar{x}}{\| \bar{x} \|} \right) \left( \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \frac{\bar{x}^{\mathrm{T}}}{\| \bar{x} \|} \right).
+\end{aligned}
+\]
+
+Define the logarithmic barrier function for any \( x \in Q^n \) by
+\( g : \mathbb{R}^n \mapsto \mathbb{R} \) with
+\[
+g(x) =
+\begin{cases}
+-\frac{1}{2} \log(\det(x)), & \text{if } \| \bar{x} \| < x_0, \\
++\infty, & \text{otherwise.}
+\end{cases}
+\]
+We note that $\lim_{\mu \rightarrow 0} \mu g(x) = \delta_{Q^n}(x)$.
+For second cone program, dealing with barrier functions may yield better numerical results than dealing with the cone constraints directly. In this case, we use a barrier function $p(\bm{x}) = \mu g(\bm{x})$ to replace the cone constraint function $p(\bm{x}) = \delta_{Q}(\bm{x})$, where $\mu >0$.  For the smoothing function $\mu g(x)$, we have the following lemma.
+% To reformulate the indicator function \( p(\bm{x}) = \delta_{Q}(\bm{x}) \), we employ a barrier function \( p(\bm{x}) = \mu g(\bm{x}) \), where \( \mu > 0 \) is a scaling parameter. The associated logarithmic barrier function \( g : \mathbb{R}^n \to \mathbb{R} \) is defined for \( \bm{x} \in K \) (with \( K = \text{int}(Q) \)) as:
+% \[
+% g(\bm{x}) =
+% \begin{cases}
+% -\frac{1}{2} \log\left(\det(\bm{x})\right), & \text{if } \| \bar{\bm{x}} \| < x_0, \\
+% +\infty, & \text{otherwise}.
+% \end{cases}
+% \]
+\begin{lemma} \label{lem:socp}
+
+(i) The proximal mapping of \(\mu \cdot g(x)\) is given by \( \text{prox}_{\mu g} : \mathbb{R}^n \mapsto \text{int}(K) \) with
+
+\[
+\emph{prox}_{\mu g}(z) =
+\begin{bmatrix}
+\frac{1}{2}\left(z_0 + \sqrt{\frac{1}{2}(\|z\|^2 + 4\mu + \Delta)}\right) \\
+\frac{z}{2}\left(1 + \frac{\sqrt{2}z_0}{\sqrt{\|z\|^2 + 4\mu + \Delta}}\right)
+\end{bmatrix}, \quad z \in \mathbb{R}^n,
+\]
+where \(\Delta = \sqrt{\det(z)^2 + 8\mu \|z\|^2 + 16\mu^2}\). Furthermore, the inverse function of the proximal mapping is given by \( \text{prox}_{\mu g}^{-1} : \text{int}(K) \to \mathbb{R} \) with $\emph{prox}_{\mu g}^{-1}(x) = x - \mu x^{-1}, \quad x \in \text{int}(K).$
+
+(ii) The projection function is the limit of the proximal mapping as taking \(\mu\) to 0, i.e., 
+\[
+\lim_{\mu \to 0} \text{prox}_{\mu g}(z) = \Pi_K(z), \quad z \in \mathbb{R}^n.
+\]
+(iii) For \(z \in \mathbb{R}^n\), let \(x = \text{prox}_{\mu g}(z)\). The inverse matrix of the derivative of the proximal mapping at the point \(z\) is given by
+
+\[
+(\partial_z \emph{prox}_{\mu g}(z))^{-1} = I - \mu \partial_x(x^{-1}),
+\]
+
+where \(\partial_x(x^{-1}) = \frac{1}{\det(x)} \begin{bmatrix}
+1 & \\
+& -I_{n-1}
+\end{bmatrix} - 2(x^{-1})(x^{-1})^\top\).
+
+(iv) The derivative of the proximal mapping at the point \(z\) is given by
+\[
+\begin{aligned}
+\partial_z \emph{prox}_{\mu g}(z) &=
+\begin{bmatrix}
+\frac{\det(x)}{\det(x)-\mu} &  \\
+ & \frac{\det(x)}{\det(x)+\mu} I_{n-1}
+\end{bmatrix}
+- \frac{2\mu \det(x) \begin{bmatrix}
+\frac{x_0}{\det(x)-\mu}  \\
+\frac{-x}{\det(x)+\mu}
+\end{bmatrix}
+\begin{bmatrix}
+ \frac{x_0}{\det(x)+\mu} \\
+\frac{-x}{\det(x)+\mu}
+\end{bmatrix}^{\mathrm{T}} }{\det(x) + 2\mu \left( \frac{x_0^2}{\det(x)-\mu} + \frac{\|\tilde{x}\|^2}{\det(x)+\mu} \right)} := \Lambda + a {u} {u}^{\mathrm{T}},
+\end{aligned}
+\]
+where $\Lambda = \begin{bmatrix}
+    a_0 &  \\
+    & a_1 I_{n-1}
+\end{bmatrix} $ and $a_0,a_1 \in \mathbb{R}$ are constants.
+\end{lemma}
+According to Lemma \ref{lem:socp}, we have that $ \frac{1}{\sigma}(I -D) + \tau_2 I = \frac{1}{\sigma}\left( \begin{bmatrix}
+  b_0 & \\
+  & b_1 I
+\end{bmatrix} - auu^{\mathrm{T}} \right) :=  \frac{1}{\sigma}\left( \Lambda_1 - a uu^{\mathrm{T}} \right), \Lambda_1 = (1 +\sigma \tau_2 )I - \Lambda.$ Consequently, it follows from SMW formular that $(\frac{1}{\sigma}( I - D) + \tau_2 I)^{-1} = \sigma (\Lambda_1^{-1} + c \Lambda_1^{-1} u u^{\mathrm{T}} \Lambda_1^{-1} ) $, where $c =  \frac{a}{1 - a{u}^{\mathrm{T}} \Lambda_1^{-1} {u}}$ is a constant. Hence, we have
+\[
+\begin{aligned}
+& \sigma D + D( \frac{1}{\sigma}(I- D) +\tau_2I )^{-1}D   \\
+ = & \sigma \left( \Lambda + auu^{\mathrm{T}} \right) +  \sigma(\Lambda + a uu^{\mathrm{T}})(\Lambda_1^{-1} + c \Lambda_1^{-1} u u^{\mathrm{T}} \Lambda_1^{-1} )(\Lambda + a uu^{\mathrm{T}}) \\
+ % = & \sigma \left( \Lambda + auu^{\mathrm{T}} \right) +\sigma ( \Lambda \Lambda_1^{-1} + c\Lambda \Lambda_1^{-1} uu^{\mathrm{T}} \Lambda_1^{-1} + a uu^{\mathrm{T}} \Lambda_1^{-1} + a c \gamma u u^{\mathrm{T}} \Lambda_1^{-1})( \Lambda + a uu^{\mathrm{T}}) , \\
+ = & \sigma \left(\Lambda \Lambda_1^{-1} \Lambda + \Lambda + c\Lambda \Lambda_1^{-1}uu^{\mathrm{T}}  \Lambda_1^{-1}\Lambda +  a(1+c\gamma) \Lambda \Lambda_1^{-1}uu^{\mathrm{T}} + a(1 + c\gamma)uu^{\mathrm{T}} \Lambda_1^{-1}\Lambda + \left( a + a^2 \gamma + a^2 c \gamma^2\right) uu^{\mathrm{T}}  \right) \\
+ = & \sigma \left(\tilde{\Lambda} + \begin{bmatrix}
+     b_0 u_0^2 & b_1 u_0 u_1^{\mathrm{T}} \\
+    b_1 u_0 u_1 & b_2 u_1 u_1^{\mathrm{T}}
+ \end{bmatrix} \right),  \\
+\end{aligned}
+\]
+where $\tilde{\Lambda} = \Lambda \Lambda_1^{-1} \Lambda + \Lambda , \gamma = u^{\mathrm{T}} \Lambda_1^{-1} u$, and $b_0,b_1,b_2$ are constants. Denote $\Lambda_1^{-1} \Lambda = \begin{bmatrix}
+  c_0 & \\
+  & c_1 I
+\end{bmatrix}$, we have $b_0 = cc_0^2 + 2a(1+c\gamma)c_0 + a + a^2\gamma + a^2c\gamma^2, b_1 = cc_0c_1 + a(1+c\gamma)(c_0 + c_1) + a + a^2\gamma + a^2c\gamma^2, b_2 = cc_1^2 + 2a(1+c\gamma)c_1 + a + a^2\gamma + a^2c\gamma^2$. Consequently, let $\tilde{u} = [b_1/b_2 u_0; u_1] $, $ b_2\tilde{u} \tilde{u}^{\mathrm{T}} = \begin{bmatrix}
+    b_1^2/b_2 u_0^2& b_1 u_0u_1^{\mathrm{T}} \\
+    b_1 u_0u_1 & b_2 u_1 u_1^{\mathrm{T}}
+\end{bmatrix}.$ It follows that
+\[
+\sigma D + D \left( \frac{1}{\sigma}(I- D) +\tau_2I \right)^{-1} D  =  \sigma \left(\tilde{\Lambda} + \begin{bmatrix}
+    (b_0 - b_1^2/b_2) u_0^2 & 0 \\
+   0  & {0}
+\end{bmatrix} \right) + \sigma b_2 \tilde{u} \tilde{u}^{\mathrm{T}}.
+\]
+Consequently, the linear system can be represented as a diagonal matrix plus a rank 1 matrix, which is significant in constructing the Schur matrix when solve the linear system using direct methods such as Cholesky factorization.
+
+
+
+
+
+
+
+% ALM based semismooth method is applied to minimize each AL function corresponding to $\bm{y}$ by solving the following equation:
+% \[ \label{eq:gradient}
+%     F_{\rm ALM} (\bm{y}; \bm{x}^k) := \bm{y} + \bm{b} +  \frac{1}{\sigma_k}\big(\prox_{\sigma p}(\bm{x}^k - \sigma_k \mathcal{A}^{\mathrm{T}}\bm{y})) = 0 \]
+% to obtain $\bm{y}^{k+1},$ and then update $\bm{x}^{k+1}$ and $\sigma^{k+1}$ by
+% \[
+% \begin{aligned}
+% \bm{x}^{k+1} & = \prox_{\sigma p}(\bm{x}^k - \sigma \mathcal{A}^{\mathrm{T}}\bm{y}^{k+1}) \\
+% \sigma^{k+1} & \uparrow \sigma_{\infty} \le \infty.
+% \end{aligned}
+% \]
+
+ % Typical ALM based methods for statistical Learning:  Suitlasso \footnote{\href{https://github.com/MatOpt/SuiteLasso}https://github.com/MatOpt/SuiteLasso}, etc. In fact, ALM-SSN is the dual ascent gradient method in terms of the multipliers $\bm{z}$. In \cite{li2018highly} and \cite{li2018efficiently}, the authors propose highly efficient algorithms for Lasso and fused lasso, they also clearly describe how to calculate the generalized Jacobian to take advantage of the sparse property.
+ \subsection{Spectral type operator}
+ 
+ The Spectral type function  includes function like $p(\bm{X}) = \lambda \|\bm{X}\|_*, \lambda \|\bm{X}\|_2$ or $\delta_{\mathbb{S}_+^n}(\bm{X})$.   Let the singular value decomposition of $\bm{X}$ denoted by $\bm{X} = \bm{U} \bm{\Sigma} \bm{V}^{\mathrm{T}}$, where the its proximal operator of $\lambda \|\bm{X}\|_*$ can be presented by:
+\begin{equation} \label{prox:nuclear}
+\text{prox}_{\lambda \|\cdot\|_*}(\bm{X}) = U \text{diag} \left( T_{\lambda} (\bm{\lambda}(\bm{X})) \right) V^T.
+\end{equation}
+Denote
+\begin{equation} \label{genJacobian-nuclear}
+\begin{aligned}
+    \hat{D}(G) &= U \left[    \frac{\Omega_{\sigma,\sigma}^{\mu} + \Omega_{\sigma,-\sigma}^{\mu}}{2} \odot G_1 +   \frac{\Omega_{\sigma,\sigma}^{\mu} - \Omega_{\sigma,-\sigma}^{\mu}}{2} \odot G_1^{\top}, (\Omega_{\sigma,0}^{\mu} \odot\left( G_2 \right)) \right] V^{\top},
+\end{aligned}
+\end{equation}
+where $\sigma =[\sigma^{(1)};\cdots;\sigma^{(m)}] \in \mathbb{R}^m$  is the tensor singular value of $\bm{X}$,  $ G_1 = U^{\top} G  V_1 \in \mathbb{R}^{n_1 \times n_1 }, G_2 = U^{\top} G V_2 \in \mathbb{R}^{n_1 \times  (n_2 - n_1)  }$ and $(\Omega_{\sigma,\sigma}^{\mu})$ is defined by:
+\begin{equation}
+    (\Omega_{\sigma,\sigma}^{\mu})_{ij} := \begin{cases}
+  \partial_B \prox_{\mu \| \cdot \|_1}(\sigma_i ) , & \mbox{if } \sigma_i = \sigma_j, \\
+  \left\{ \frac{\prox_{\mu\|\cdot\|_1}(\sigma_i) -\prox_{\mu\|\cdot\|_1}(\sigma_j) }{\sigma_i-\sigma_j} \right\}, & \mbox{otherwise}.
+\end{cases}
+\end{equation}
+ For $p(\bm{X}) = \lambda \|\bm{X} \|_2$, the corresponding proximal operator is 
+\begin{equation} \label{prox:l2l2}
+ \text{prox}_{\lambda \|\cdot\|_2}(\bm{X}) =    \bm{U}\text{diag} \left( \lambda(\bm{X}) - \lambda P_{\Delta_n} (\lambda(\bm{X}) / \lambda) \right) \bm{V}^T.
+\end{equation}
+Hence, the corresponding generalized Jacobian is denoted by \eqref{genJacobian-nuclear} with
+\begin{equation} \label{prox:l2l22}
+    (\Omega_{\sigma,\sigma}^{\mu})_{ij} := \begin{cases}
+  \partial_B (\prox_{\mu \| \cdot \|_{\infty}}(\sigma))_i , & \mbox{if } \sigma_i = \sigma_j, \\
+  \left\{ \frac{(\prox_{\mu\|\cdot\|_{\infty}}(\sigma))_i -(\prox_{\mu\|\cdot\|_{\infty} }(\sigma))_j }{\sigma_i-\sigma_j} \right\}, & \mbox{otherwise}.
+\end{cases}
+\end{equation}
+For $p(\bm{X}) = \delta_{\mathbb{S}_+^n}( \bm{X} )$, the corresponding generalized Jacobian can also be denoted by \eqref{genJacobian-nuclear} with  
+\begin{equation} \label{genJacobian-sdp}
+ D_{\mathbb{S}_+^n }(H):=Q\left(\Sigma \circ\left(Q^{\mathrm{T}} H Q\right)\right) Q^{\mathrm{T}}, \quad H \in \mathbb{S}^n,   
+\end{equation}
+where $\circ$ denotes the Hadamard product of two matrices and
+\begin{equation}\label{eq:sdp+:sigma}
+    \Sigma=\left[\begin{array}{cc}
+E_{\alpha \alpha} & v_{\alpha \bar{\alpha}} \\
+v_{\alpha \bar{\alpha}}^{\mathrm{T}} & 0
+\end{array}\right], \quad v_{i j}:=\frac{\lambda_i}{\lambda_i-\lambda_j}, \quad i \in \alpha, \quad j \in \bar{\alpha},
+\end{equation}
+ $E_{\alpha \alpha} \in \mathbb{S}^{|\alpha|}$ is the matrix of ones.
+
+We next introduce a Lemma that will be used to obtain the explicit formula of $(D_2^{\tau_4})^{-1}$ and preserve the low-rank structure.
+
+\begin{lemma}
+For operator $\mathcal{T}: \mathbb{R}^{n \times n} \rightarrow \mathbb{R}^{n \times n} : \mathcal{T}(\mathcal{G}) = \Omega_1 \odot \mathcal{G} + \Omega_2 \odot \mathcal{G}^{\mathrm{T}}$.  The inverse of 
+ $\mathcal{T}$ is
+\[
+\mathcal{T}^{-1}(\mathcal{G}) = (\Omega_s + \Omega_a) \odot \mathcal{G} + (\Omega_s - \Omega_a) \odot \mathcal{G}^{\mathrm{T}},
+\]
+where $\Omega_s = 1./[2(\Omega_1 + \Omega_2)],\, \Omega_a = 1./[2(\Omega_1 - \Omega_2)]$ and $./$ means element wise division.
+\end{lemma}
+According to the above lemma, $(D_2^{\tau_4})^{-1}$ can be represented as
+\begin{equation}
+\begin{aligned}
+(D_2^{\tau_4})^{-1}(\mathcal{G}) &= \mathbf{U} \ \left[ (\Omega^{\tau_4}_s + \Omega^{\tau_4}_a) \odot \mathcal{G}_1 +    (\Omega^{\tau_4}_s - \Omega^{\tau_4}_a) \odot \mathcal{G}_1^{\mathrm{T}} , (1./\Omega^{\tau_4}_3  \odot \mathcal{G}_2 ) \right] \mathbf{V}^{\mathrm{T}} + \sigma/(1+\sigma \tau_4) \mathcal{G}.
+\end{aligned}
+\end{equation}
+where $\Omega^{\tau_4}_s = 1./[2(\Omega_1^{\tau_4} + \Omega_2^{\tau_4} ) ] - \sigma/(1+\sigma \tau_4)E ,\, \Omega^{\tau_4}_a = 1./[2(\Omega_1^{\tau_4} -\Omega_2^{\tau_4} ) ],\, E$ is the matrix of ones with correct size. The detail of the compuation process is summarized in Algorithm \ref{alg:computeD2}. Then the low-rank structure can be fully exploited and the total computational cost for each inner iteration is reduced to $O(n_1r^2)$.
+
+  \begin{algorithm}[h]
+\caption{The process of computing $(D_2^{\tau_4})^{-1}(\mathcal{G})$.}
+\begin{algorithmic}[1] \label{alg:computeD2}
+\REQUIRE$\mathcal{G},(\Omega_1^{\tau_4})_{\alpha \alpha},(\Omega_1^{\tau_4})_{\alpha \bar{\alpha}}, (\Omega_2^{\tau_4})_{\alpha \alpha},\,(\Omega_2^{\tau_4})_{\alpha \bar{\alpha}},\,$ $(\Omega_1^{\tau_4})_{\alpha \beta}, U=[U_{\alpha},U_{\bar{\alpha}}],V = [V_{\alpha},\,V_{\bar{\alpha}},\, V_{\beta}]$, where $U_{\alpha} \in \mathbb{R}^{n \times r}, U_{\bar{\alpha}} \in \mathbb{R}^{n \times (n-r)}, V_{\alpha} \in \mathbb{R}^{m \times r}, V_{\bar{\alpha}} \in \mathbb{R}^{m \times (m-r)}, 
+V_{\beta} \in  \mathbb{R}^{m \times (m -n)}$, penalty parameter $\sigma$ and $\tau_4$.
+\ENSURE $(D_2^{\tau_4})^{-1}(\mathcal{G})$
+\STATE Compute $(\mathcal{G}_1)_{\alpha\alpha}, (\mathcal{G}_1)_{\alpha\bar{\alpha}}, (\mathcal{G}_1)_{\bar{\alpha}\alpha}, (\mathcal{G}_1)_{\alpha\beta}$  where
+\[
+\begin{aligned}
+(\mathcal{G}_1)_{\alpha\alpha} &= U_{\alpha}^{\mathrm{T}}\,\, \mathcal{G}\,\, (V_{\alpha}),\qquad(\mathcal{G}_1)_{\alpha\bar{\alpha}}= U_{\alpha}^{\mathrm{T}} \,\,\mathcal{G} \,\,(V_{\bar{\alpha}}), \\
+(\mathcal{G}_1)_{\bar{\alpha}\alpha} &= U_{\bar{\alpha}}^{\mathrm{T}} \,\,\mathcal{G} \,\,(V_{\bar{\alpha}}), \qquad
+(\mathcal{G}_1)_{\alpha\beta} = U_{\alpha}^{\mathrm{T}}\,\, \mathcal{G}\,\, (V_{\beta}).
+\end{aligned}
+\]
+\STATE Compute
+\[
+ \mathcal{G}_2 = \begin{bmatrix}
+(\mathcal{G}_2)_{\alpha \alpha} & (\mathcal{G}_2)_{\alpha \bar{\alpha}} & (\mathcal{G}_2)_{\alpha \beta}\\
+(\mathcal{G}_2)_{\bar{\alpha} \alpha} & 0 &0
+ \end{bmatrix},
+\]
+where
+\[
+\begin{aligned}
+(\mathcal{G}_2)_{\alpha \alpha} &= (\Omega_1^{\tau_4})_{\alpha \alpha} \odot (\mathcal{G}_1)_{\alpha \alpha} + (\Omega_2^{\tau_4})_{\alpha \alpha} \odot ((\mathcal{G}_1)_{\alpha \alpha})^{\mathrm{T}} ,\\
+(\mathcal{G}_2)_{\alpha \bar{\alpha}} &= (\Omega_1^{\tau_4})_{\alpha \bar{\alpha}} \odot (\mathcal{G}_1)_{\alpha \bar{\alpha}} + (\Omega_2^{\tau_4})_{\alpha \bar{\alpha}} \odot ((\mathcal{G}_1)_{\bar{\alpha} \alpha})^{\mathrm{T}},\\
+(\mathcal{G}_2)_{\bar{\alpha} \alpha} &= ( (\Omega_1^{\tau_4})_{\alpha \bar{\alpha}})^{\mathrm{T}} \odot (\mathcal{G}_1)_{\bar{\alpha} \alpha} + ((\Omega_2^{\tau_4})_{\alpha \bar{\alpha}})^{\mathrm{T}} \odot ((\mathcal{G}_1)_{\alpha \bar{\alpha}})^{\mathrm{T}}, \\
+(\mathcal{G}_2)_{\alpha \beta} &= (\Omega_1^{\tau_4})_{\alpha \beta} \odot (\mathcal{G}_1)_{\alpha \beta}.
+\end{aligned}
+\]
+\STATE Compute $\mathcal{G}_3 = \mathcal{G}_{12} + \mathcal{G}_{11} + \mathcal{G}_{21} + \mathcal{G}_{13}$ where
+\[
+\begin{aligned}
+\mathcal{G}_{11} & = U_{\alpha}\,\, (\mathcal{G}_2)_{\alpha \alpha} \,\,V_{\alpha}^{\mathrm{T}}, \qquad
+\mathcal{G}_{12}  = U_{\alpha}\,\, (\mathcal{G}_2)_{\alpha \bar{\alpha}} \,\,V_{\bar{\alpha}}^{\mathrm{T}}, \\
+\mathcal{G}_{21} & = U_{\bar{\alpha}}\,\, (\mathcal{G}_2)_{\bar{\alpha} \alpha} \,\,V_{\alpha}^{\mathrm{T}}, \qquad
+\mathcal{G}_{13}  = U_{\alpha}\,\, (\mathcal{G}_2)_{\alpha \alpha} \,\,V_{\beta}^{\mathrm{T}}.
+\end{aligned}
+\]
+\STATE Compute $(D_2^{\tau_4})^{-1}(\mathcal{G}) = \mathcal{G}_3 + \sigma/(1+\sigma \tau_4)\mathcal{G}$.
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Fused regularizer}
+For  $p(x) = \lambda_1 \|x\|_1 + \lambda_2 \|Fx\|_1,$ where $F(x) = [x_2 - x_1,\cdots,x_n - x_{n-1}].$  According to \cite{li2018efficiently}, the corresponding proximal operator is
+\begin{equation} \label{prox-fused}
+\text{prox}_p(\bm{v}) = \text{prox}_{\lambda_1 \|\cdot \|_1}(x_{\lambda_2}(\bm{v})) = \text{prox}_{\lambda_1 \|\cdot \|_1}( \bm{v} - F^{\mathrm{T}}z_{\lambda_2}(F\bm{v})  ),
+\end{equation}
+ where
+$
+z_{\lambda_2}(u) := \operatorname{argmin} \left\{ \frac{1}{2} \| F^T z \|^2 - \langle z, u \rangle \ \bigg| \ \| z \|_\infty \leq \lambda_2 \right\} , \forall u \in \mathbb{R}^{n-1}.
+$ Define the  multifunction $\mathcal{M}: \mathbb{R}^n \rightarrow \mathbb{R}^{n \times n}$ by:
+\begin{equation} \label{genJacobian:fused}
+\mathcal{M}(v):= \{M \in \mathbb{R}^{n \times n}| M = \Theta P, \Theta \in \partial_{B}\prox_{\lambda_1 \|\cdot\|_1}(x_{\lambda_2}), P \in \mathcal{P}_x(v) \},
+\end{equation}
+and
+$
+\mathcal{P}_x(v):= \{\hat{P} \in \mathbb{R}^{n-1 \times n-1}| \hat{P} = I - F^{\mathrm{T}}(\Sigma_K FF^{\mathrm{T}}\Sigma_K )^{\dagger}F, K \in \mathcal{K}_z(v) \},
+$
+where $\Sigma_K = \text{Diag}(\sigma_K) \in \mathbb{R}^{n-1 \times n-1}$ with
+\[
+(\sigma_K)_i = \begin{cases}
+                 0, & \mbox{if } i \in K, \\
+                 1, & \mbox{otherwise}, i = 1,\cdots,n-1.
+               \end{cases}
+\]
+Define $\Gamma:= I_n - F^{\mathrm{T}}(\Sigma FF^{\mathrm{T}}\Sigma)^{\dagger}  = \text{Diag}(\Gamma_1,\cdots,\Gamma_N),$ where 
+\[
+\Gamma_i = \begin{cases}
+             \frac{1}{n_i + 1}\mathbf{E}_{n_i+1}, & \mbox{if } i \in J, \\
+             I_{n_i}, & \mbox{if } i \in \{1,N\}, \\
+             I_{n_i-1}, & \mbox{otherwise}.
+           \end{cases}
+\]
+Moreover, $\Gamma = H + UU^{\mathrm{T}} = H + U_JU_J^{\mathrm{T}},$ where $H \in \mathbb{R}^{n \times n}$ is a N-block diagonal matrix given by $H = \text{Diag}(\Upsilon_1,\dots,\Upsilon_N)$ with
+\[
+\Upsilon_i = 
+\begin{cases}
+O_{n_i+1} & \text{if } i\in J,\\
+I_{n_i} & \text{if } i\notin J\text{ and } i\in\{1,N\},\\
+I_{n_i-1} & \text{otherwise}.
+\end{cases}
+\]
+$ U \in \mathbb{R}^{n\times N} $ with its $(k,j)$-th entry given by
+\begin{equation}
+U_{k,j}=
+\begin{cases}
+\dfrac{1}{\sqrt{n_j+1}} & \text{if }\displaystyle\sum_{t=1}^{j-1} n_t + 1 \leq k \leq \sum_{t=1}^{j} n_t + 1,\quad\text{and }j\in J,\\[10pt]
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+and  $U_J$ consists of the nonzero columns of $U$, i.e., the columns whose indices are in $J$. Then $D = \Theta P,$ where $P = I - F^{\mathrm{T}}(\Sigma FF^{\mathrm{T}}\Sigma)^{\dagger}F,$ and 
+\[
+\theta_i = \begin{cases}
+             0, & \mbox{if } |(x_{\lambda_2}(v))_i |\le \lambda_1,  \\
+             1, & \mbox{otherwise, \quad $i = 1,\cdots ,n $},
+           \end{cases}
+\]
+and let $I_z(v) :=  \{i| |(z_{\lambda_2}(Bv))_i|=\lambda_2, i =1,\cdots,n-1 \}.$ Then $\sigma = \text{Diag}(\sigma) \in \mathbb{R}^{(n-1) \times (n-1)}$ with
+\[
+\sigma_i = \begin{cases}
+             0, & \mbox{if } i \in I_z(v), \\
+             1 , & \mbox{otherwise}, i =1,\cdots,n-1.
+           \end{cases}
+\]
+It follows that $\Theta \in \partial_{B} \prox_{\lambda_1 \|\cdot\|_1}(x_{\lambda_2}(v))$ and $P \in \mathcal{P}_x(v).$
+% We first take a  Clarke's generalized Jacobian: $J^k \in           \hat{\partial}F(\bm{w}^k)$.
+% The problem is transformed into solving the following problem by Gaussian elimination:
+% \[
+% ((\tau_1 +1)I + \mathcal{A}\tilde{D}\mathcal{A}^{\mathrm{T}}) \bm{d}^k_{\bm{y}} = \mathcal{A}D \hat{D}^{-1} F_{\bm{x}} - F_{\bm{y}},
+% \]
+% where $\tilde{D} = D\hat{D}^{-1}D + \sigma D, \hat{D} = \frac{1}{\sigma}(I- D) + \tau_2I$ and $D \in \hat{\partial} \prox_{\sigma p}(\bm{x} - \sigma \mathcal{A}^*(\bm{y}))$ is an element of the generalized Jacobian of $\prox_{\sigma p}$. Then
+% \[
+% d^k_{\bm{x}} = (\hat{D})^{-1}(-F_{\bm{x}} + D\mathcal{A}^{\mathrm{T}}d_{\bm{y}}^{k}).
+% \]
+Therefore, $M = \Theta (H + U_JU_J^{\mathrm{T}}) = \Theta (H + U_JU_J^{\mathrm{T}})\Theta, \, \Theta^2 = \Theta,\, H^2=H,\, \Theta H = \Theta H \Theta.$
+Define the following index sets:
+\[
+\alpha:= \{i| \theta_i = 1, i \in \{1,\cdots,n\} \},\quad \beta:= \{i\,|h_i = 1, i \in \alpha \},
+\]
+where $\theta_i$ and $h_i$ are the $i$-th diagonal entries of matrices $\Theta$ and $H$ respectively. Then we have
+\[
+\mathcal{B} \Theta H \mathcal{B}^{\mathrm{T}} = \mathcal{B} \Theta H \Theta \mathcal{B}^{\mathrm{T}} = \mathcal{B}_{\alpha} H \mathcal{B}_{\alpha}^{\mathrm{T}} = \mathcal{B}_{\beta} \mathcal{B}_{\beta}^{\mathrm{T}},
+\]
+where $\mathcal{B}_{\alpha} \in \mathbb{R}^{m \times |\alpha|}$ and $\mathcal{B}_{\beta} \in \mathbb{R}^{m \times |\beta|}$ are two submatrix obtained from $\mathcal{B}$ by extracting those columns with indices in $\alpha$ and $\beta.$ Meanwhile, we have
+\[
+\mathcal{B}\Theta(U_j U_j^{\mathrm{T}})\mathcal{B}^{\mathrm{T}} = \mathcal{B}\Theta(U_j U_j^{\mathrm{T}}) \Theta \mathcal{B}^{\mathrm{T}} =
+\mathcal{B}_{\alpha} \tilde{U} \tilde{U}^{\mathrm{T}} \mathcal{B}_{\alpha}^{\mathrm{T}},
+\]
+where $\tilde{U} \in \mathbb{R}^{|\alpha| \times r}$ is a submatrix obtained from $\Theta U_J$ by extracting those rows with
+indices in $\alpha$ and the zero columns in $\Theta U_J$ are removed. Therefore, by exploiting the
+structure in $D$, we can express $\mathcal{B}D\mathcal{B}^{\mathrm{T}}$ in the following form:
+\[
+\mathcal{B}D\mathcal{B}^{\mathrm{T}} = \mathcal{B}_{\beta} \mathcal{B}_{\beta}^{\mathrm{T}} + \mathcal{B}_{\alpha}\tilde{U}\tilde{U}^{\mathrm{T}}\mathcal{B}_{\alpha}^{\mathrm{T}}.
+\]
+For $D\hat{D}^{-1}D$, where $\hat{D} = \frac{1}{\sigma}(I- D) + \tau_2 I$ $D = \Theta H \Theta,$  we should note that $D = \Theta H \Theta = \Theta H$ holds since
+$
+\Theta = \text{Diag}(\Theta_1,\cdots,\Theta_N).
+$
+Thus $M = \text{Diag}(\Theta_1 \Gamma_1,\cdots,\Theta_N \Gamma_N).$ Define $J := \{j| \, \Gamma_j \, \mbox{is not an identity matrix}, 1\le j \le N \}.$ It follows from $\text{supp}(Fx_{\lambda_2}(v)) \subset K$ that
+\[
+\Theta_j = \mathbf{O}_{n_j +1}\, \mbox{or}\, I_{n_j +1 }, \forall j \in J,
+\]
+which implies $\Theta_j \Gamma_j \in \mathbb{S}_+^{n_j + 1}, \forall j \in J$ and hence $D \in \mathbb{S}_+^n$. Consequently, we have
+$D = \text{Diag}(D_1,\cdots,D_n),$
+where
+\[
+D_i = \begin{cases}
+        \frac{1}{n_i +1}\mathbf{E}_{n_i +1}, & \mbox{if } i \in J \,\mbox{and}\, \Theta_i =I_{n_i}, \\
+        I_{n_i}, & \mbox{if }\, i \notin J\, \mbox{and}\, i \in \{i,N\}, \\
+        0, & \mbox{if } \Theta_i = \bm{0}, \\
+        I_{n_i -1}, & \mbox{otherwise}.
+      \end{cases}
+\]
+According to the SMW formula,
+% $
+% (\mathcal{B} - vv^{\mathrm{T}})^{-1} = \mathcal{B}^{-1} + \frac{\mathcal{B}^{-1 }vv^{\mathrm{T}}\mathcal{B}^{-1 } }{1 - v^{\mathrm{T}}\mathcal{B}^{-1}v },
+% $
+the inverse of $\hat{D}^{-1}$ has explicit solution:
+\[
+\begin{aligned}
+&((\frac{1}{\sigma} + \tau_2) I - \frac{1}{\sigma}D)^{-1} = ((\frac{1}{\sigma} + \tau_2) I - \frac{1}{\sigma}\Theta(H + U_JU_J^{\mathrm{T}}) \Theta)^{-1}  \\
+&= \begin{cases}
+                 \frac{\sigma}{1+\tau_2 \sigma} I_{n_i +1} + \frac{1}{(1 +\tau_2\sigma)( \tau_2)(n_i +1)}\mathbf{E}_{n_1 +1} , & \mbox{if } \Theta_i = 1, \\
+                 \frac{1}{\tau_2} I_{n_i} , & \mbox{if } \mbox{if }\, i \notin J\, \mbox{and}\, i \in \{i,N\}, \\
+                 \frac{\sigma}{1+\sigma \tau_2} I_{n_i}, & \mbox{if } \Theta_i = \bm{0}, \\
+                 \frac{1}{\tau_2} I_{n_i -1} , & \mbox{otherwise}.
+               \end{cases}
+\end{aligned}
+\]
+As a consequence, $\tilde{D}$ can be represented by:
+\[
+\begin{aligned}
+\tilde{D}&= \begin{cases}
+                 (\frac{1}{\tau_2} + \sigma ) \frac{1}{n_i +1 }\mathbf{E}_{n_1 +1}  , & \mbox{if } i \in J \,\mbox{and}\, \Theta_i =I_{n_i}, \\
+                 (\frac{1}{\tau_2}+\sigma)  I_{n_i} , & \mbox{if } \mbox{if }\, i \notin J\, \mbox{and}\, i \in \{i,N\}, \mbox{and}\, \Theta_i =I_{n_i}, \\
+                 0 , & \mbox{if } \Theta_i = \bm{0}, \\
+                 (\frac{1}{\tau_2} +\sigma) I_{n_i -1} , & \mbox{otherwise}.
+               \end{cases}
+\end{aligned}
+\]
+and $D\hat{D}^{-1}$ has the following formula:
+\[
+D \hat{D}^{-1} = \begin{cases}
+                 (\frac{1}{\tau_2 (n_i +1 )} ) \mathbf{E}_{n_1 +1}  , & \mbox{if } i \in J \,\mbox{and}\, \Theta_i =I_{n_i}, \\
+                 \frac{1}{\tau_2} I_{n_i} , & \mbox{if } \mbox{if }\, i \notin J\,,  i \in \{i,N\}, \mbox{and}\, \Theta_i =I_{n_i}, \\
+                 0, & \mbox{if } \Theta_i = \bm{0}, \\
+                 \frac{1}{\tau_2} I_{n_i -1} , & \mbox{otherwise}.
+               \end{cases}
+\]
+Define $\tilde{D} = \Theta \tilde{H}$ and the following index sets: $\alpha := \{i | \theta_i = 1, i \in \{1, \cdots,n\} \}, \beta:= \{i|h_i=1,i\in \alpha \},$
+ Then we have
+$
+\mathcal{B} \Theta \tilde{H} \mathcal{B}^{\mathrm{T}} = \mathcal{B} \Theta \tilde{H} \Theta \mathcal{B}^{\mathrm{T}} = \mathcal{B}_{\alpha} \tilde{U}\tilde{U} \mathcal{B}_{\alpha}^{\mathrm{T}} + \tilde{\mathcal{B}}_{\beta} \tilde{\mathcal{B}}_{\beta}^{\mathrm{T}},
+$ where $\tilde{U}$ and $\tilde{\mathcal{B}}$ are the scaling matrix of $U$ and $\mathcal{B}$. Then we have the following decomposition: $\mathcal{B} \tilde{D} \mathcal{B}^{\mathrm{T}} = W_1 W_2^{\mathrm{T}},$
+where $W_1 := [\tilde{\mathcal{B}}_{\beta}, \mathcal{B}_{\alpha}\tilde{U}\tilde{U}^{\mathrm{T}} ] \in \mathbb{R}^{m \times (|\alpha| + |\beta|)}, W_2 = [\tilde{\mathcal{B}}_{\beta}, \mathcal{B}_{\alpha}].$
+Using the above decomposition and we obtain
+\[
+((\tau_1 +1)I + \mathcal{B}\tilde{D}\mathcal{B}^{\mathrm{T}})^{-1} = \frac{1}{\tau_1 + 1} I_m - \frac{1}{\tau_1 + 1} \tilde{W}_1 ((\tau_1 + 1)I_{|\alpha| + |\beta|}+ \tilde{W}_2^{\mathrm{T}}\tilde{W}_1)^{-1}\tilde{W}_2^{\mathrm{T}}.
+\]
+Thus, we only need to factorize an $(|\alpha| + |\beta|) \times (|\alpha| + |\beta|)$ matrix and the total computational cost is  merely $\mathcal{O}(|\alpha| + |\beta|)^3 + \mathcal{O}(m(|\alpha|+|\beta|)^2)$ which is the same as the result in \cite{li2018efficiently}. Consequently, we can solve the linear system using direct methods such as Cholesky factorization at low cost.
+\section{Numerical experiments} \label{4}
+In this section, we conduct numerous experiments to verify the efficency and robustness of Algorithm \ref{alg:ssn}.   The criteria to measure the accuracy of $(\bm{y},\bm{z},\bm{v},\bm{r},\bm{x})$ is based on KKT optimality conditions:
+\[
+\eta = \max\{\eta_P,\eta_D,\eta_K,\eta_{\mathcal{P}} \},
+\]
+where
+\begin{equation*}\label{criteria}
+\begin{aligned}
+\eta_P &:= \frac{\| \mathcal{A}(\bm{x}) - \Pi_{\mathcal{P}_2}(\mathcal{A}(\bm{x}) - \bm{y} ) \|  }{1+\|
+\bm{x}\|} ,
+\eta_D := \frac{\| \mathcal{A}^*(\bm{y}) + \mathcal{B}^*(\bm{z}) + \bm{s} - \mathcal{Q}(\bm{v})- \bm{c}\|  }{1 + \|\bm{c}\|}, \\
+\eta_K &:= \min \left\{ \frac{\| \bm{x}-\text{prox}_{p}(\bm{x}-\bm{s} )\| }{1+\|\bm{s}\|+\| \bm{x}\| },  \frac{ \|\mathcal{Q}(\bm{v}) -\mathcal{Q}(\bm{x})\|_{\mathrm{F}} }{1 + \|\mathcal{Q}(\bm{v}) \| + \|\mathcal{Q}(\bm{x}) \|  } \right\}, \\
+\eta_{\mathcal{P}} &= \min \left\{
+   \frac{\|\text{prox}_{ f}(\mathcal{B}\bm{x} -  \bm{z}) -  \mathcal{B}(\bm{x})\|}{1 + \|\mathcal{B}(\bm{x})\| + \|\bm{z}\| } \,\text{or}\, \frac{\| -\nabla f^*(-\bm{z}) - \mathcal{B}(\bm{x})\| }{1+ \|\mathcal{B}(\bm{x})\| + \|\bm{z} \| },
+\frac{\|\Pi_{\mathcal{P}_1}(\bm{x} -  \bm{r} ) -  \bm{x}\|}{1+ \|\bm{x}\| + \|\bm{r}\| } \right\}.
+\end{aligned}
+\end{equation*}
+Denote \texttt{pobj} and \texttt{dobj} as the objective function value of the primal and dual problem, respectively. We also compute the relative gap by
+ \[
+ \eta_g = \frac{\texttt{|pobj - dobj|} }{1 + \texttt{|pobj| + |dobj|}}.
+ \]
+ % The stop  criteria is clafied
+ % For given accuracy $\eta$, we terminate SSNCVX when $\eta < 10^{-6}.$
+
+% \subsection{Dataset Source}
+
+
+\subsection{Lasso}
+The Lasso problem corresponding to \eqref{general} can be expressed as
+\begin{equation}\label{lasso}
+\min_{\bm{x}} \quad  \frac{1}{2}\|\mathcal{B}(\bm{x})-\bm{b}\|^2 + \lambda \|\bm{x}\|_1.
+\end{equation}
+We test the problem in data from UCI\footnote{\href{https://archive.ics.uci.edu/}{ https://archive.ics.uci.edu/}}
+   and LIBSVM dataset\footnote{\href{https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/}{ https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/}}.
+These data sets are collected
+from 10-K Corpus \cite{kogan2009predicting} and the UCI data repository \cite{lichman2013uci}.
+As suggested in \cite{huang2010predicting}, for the data sets \textbf{pyrim}, \textbf{triazines}, \textbf{abalone}, \textbf{bodyfat}, \textbf{housing}, \textbf{mpg}, and
+\textbf{space\_ga}, we expand their original features by using polynomial basis functions over
+those features. For example, the last digit in \textbf{pyrim5} indicates that an order 5 polynomial is used to generate the basis functions. This naming convention is also used
+in the rest of the expanded data sets. These test instances, shown in Table \ref{tab:tensor-image}, can be
+quite difficult in terms of the problem dimensions and the largest eigenvalue of $\mathcal{B}\mathcal{B}^*$,
+which is denoted as $\lambda_{\max}(\mathcal{B}\mathcal{B}^*)$.
+
+ In table \ref{tab:1e3}, $m$ denotes the number of samples, $n$ denotes the number of features, and ``nnz'' denotes the number of nonzeros in the solution $x$ obtained by the optimal solution using the following estimation:
+      \[
+      \text{nnz}:= \min \{k| \sum_{i=1}^{k} |\hat{x}_i| \ge 0.999 \|x\|_1 \},
+      \]
+      where $\hat{x}$ is obtained by sorting $x$ such that $|\hat{x}_1| \ge |\hat{x}_2|  \ge \cdots \ge |\hat{x}_n|.$
+  % The stop criterion is set by the following relative KKT residual:
+  %     \[
+  %     \eta = \frac{\tilde{x}- \prox_{\lambda \|\cdot\|_1} (\tilde{x}-\mathcal{B}^*(\mathcal{B}\tilde{x}-b ) ) }{1+ \|\tilde{x}\| + \|\mathcal{B}\tilde{x}-b\|}.
+  %     \]
+  %     We stop the tested algorithms when $\eta < 1e-6 .$ 
+      The algorithms to compare is SSNAL  \footnote{\href{https://github.com/MatOpt/SuiteLasso}{ https://github.com/MatOpt/SuiteLasso}} and FPC\_AS      \footnote{\href{http://www.caam.rice.edu/optimization/L1/FPC\_AS/}{http://www.caam.rice.edu/optimization/L1/FPC\_AS/}}. A accelerated proximal gradient based method, ADMM algorithm, APG algorithm. The test results for different choice of $\lambda$, i.e., $\lambda = 10^{-3}\|\mathcal{B}^{\mathrm{T}}\bm{b}\|_{\infty}$ and $\lambda = 10^{-4}\|\mathcal{B}^{\mathrm{T}}\bm{b}\|_{\infty}$ and different algorithms are given in Table \ref{tab:1e3} and \ref{tab:1e4}. We can see that, both SSNCVX and SSNAL has successfully solved all problems while other first order methods can not. Furthermore, SSNCVX is faster than SSNAL in all the tested Lasso problems, demonstrating its superiority in solving Lasso problems.
+
+
+\begin{scriptsize}
+\begin{table}[h]
+\begin{tabular}{|c|c|cc|cc|cc|cc|}
+\cline{1-10}
+\multirow{2}{*}{id}&\multirow{2}{*}{nnz} &  \multicolumn{2}{c|}{SSNCVX} & \multicolumn{2}{c|}{SSNAL} & \multicolumn{2}{c|}{SLEP} & \multicolumn{2}{c|}{ADMM} \\
+\cline{3-10}
+&  &    $\eta$     & time        &  $\eta$  & time & $\eta$   & time & $\eta$  & time\\
+\cline{1-10}
+uci\_CT & 13  & 7.6-7  & \textbf{0.64}    & 4.4-13 & 0.86 &  2.2-2  & 35.95 &  7.7-3 & 46.02\\
+\cline{1-10}
+log1p.E2006.train & 5  & 5.4-7  & \textbf{17.3}    & 1.5-11 & 36.0 & 2.0-2  & 1850.15 & 1.2-1 & 3604.34\\
+\cline{1-10}
+E2006.test  & 1  & 2.2-11  & \textbf{0.17}    & 4.3-10 & 0.28 &  7.5-12   & 1.11 & 7.9-7 & 428.64 \\
+\cline{1-10}
+log1p.E2006.test   & 8 & 3.3-8  & \textbf{2.83}    & 2.5-10 & 5.12 & 4.8-2  & 447.56  & 1.2-1  & 3603.64 \\
+\cline{1-10}
+pyrim5  & 72  & 4.2-16 & \textbf{1.82}    & 5.7-8 & 2.16 & 2.4-2  & 106.09  & 1.5-3  & 3600.52 \\
+\cline{1-10}
+triazines4 & 519  & 2.6-13  & \textbf{10.64}    & 3.4-9 & 11.23 &  8.3-2 & 246.11  & 9.7-3 & 3603.99 \\
+\cline{1-10}
+abalone7 & 24  & 4.6-11 & \textbf{0.75}    & 1.8-9 & 1.06 & 2.5-3 & 34.57 & 3.7-4  & 540.27 \\
+\cline{1-10}
+bodyfat7 & 2 & 4.8-13  & \textbf{0.79}    & 1.4-8 & 1.08 & 1.9-6 & 28.10 & 8.4-4 & 3609.63 \\
+\cline{1-10}
+housing7 & 158  & 5.1-13  & \textbf{1.83}    & 6.3-9 & 1.74 &  1.3-2  & 46.60 & 1.1-2 & 3601.26 \\
+\cline{1-10}
+mpg7& 47 & 4.4-16  & \textbf{0.10}   & 1.5-8  & 0.14 & 7.4-5   & 0.69 & 1.0-6 & 63.41 \\
+\cline{1-10}
+spacega9 & 14  & 4.7-15  & \textbf{0.25}   & 9.7-9 & 1.01 & 1.9-8   & 21.12 & 1.0-6 & 294.52 \\
+\cline{1-10}
+E2006.train & 1   & 3.9-9  & \textbf{0.44}    & 4.4-10 & 0.87 &  1.4-11   & 1.13 & 4.4-5 & 1149.22\\
+\cline{1-10} 
+\end{tabular} 
+\caption{The results of tested algorithms on Lasso problem with real data ($\lambda = 10^{-3}\|\mathcal{B}^{\mathrm{T}}\bm{b}\|_{\infty}$).}\label{tab:1e3}
+\end{table}
+\end{scriptsize}
+
+\begin{scriptsize}
+\begin{table}[h]
+\begin{tabular}{|c|c|cc|cc|cc|cc|}
+\cline{1-10}
+\multirow{2}{*}{id} & \multirow{2}{*}{nnz} & \multicolumn{2}{c|}{SSNCVX} & \multicolumn{2}{c|}{SSNAL} & \multicolumn{2}{c|}{SLEP} & \multicolumn{2}{c|}{ADMM} \\
+\cline{3-10}  &  &  $\eta$     & time        &  $\eta$  & time & $\eta$  & time & $\eta$  & time\\
+\cline{1-10}
+uci\_CT  & 44 & 2.6-7  & \textbf{1.26}    & 2.9-12 & 1.75 & 1.8-1 & 41.63 & 2.0-3 & 49.88\\
+\cline{1-10}
+log1p.E2006.train & 599   & 3.0-7  & \textbf{33.92}    & 5.9-11 & 68.83 &  3.3-2 & 1835.32 & 1.2-1 & 3608.17 \\
+\cline{1-10}
+E2006.test& 1   & 2.6-14  & \textbf{0.20}    & 3.7-9 & 0.29 &  2.4-12 & 0.38  & 9.0-7 & 268.11\\
+\cline{1-10}
+log1p.E2006.test & 1081   & 8.8-9  & \textbf{13.72}    & 2.7-10 & 30..1 & 7.5-2  & 455.56 & 1.6-1 & 3606.60 \\
+\cline{1-10}
+pyrim5  & 78 & 5.6-16  & \textbf{2.01}    & 5.0-7 & 2.59 & 1.1-2  & 108.93  & 3.1-3 & 3601.09 \\
+\cline{1-10}
+triazines4 & 260  & 9.5-16  & \textbf{18.48}    & 8.3-8 & 34.44 & 9.2-2 & 187.45  & 1.2-2 & 3604.48 \\
+\cline{1-10}
+abalone7 & 59  & 6.1-12  & \textbf{1.63}    & 1.2-8 & 2.00 & 1.5-2 & 43.91 & 1.0-6 & 356.34 \\
+\cline{1-10}
+bodyfat7 & 3 & 1.0-16 & \textbf{1.14}    & 9.7-8 & 1.51 & 6.1-4 & 41.98  & 1.3-4 & 3601.89 \\
+\cline{1-10}
+housing7 & 281  & 2.6-11  & \textbf{2.51}    & 1.2-7 & 2.52 & 4.1-2 & 52.60 & 3.6-4 & 3601.09 \\
+\cline{1-10}
+mpg7 & 128 & 1.8-15  & \textbf{0.11}   & 6.9-8  & 0.18 & 5.8-4  & 0.76 & 9.9-7 & 11.67 \\
+\cline{1-10}
+spacega9  & 38 & 3.1-12  & \textbf{0.53}   & 3.5-7 & 0.72 & 9.0-5  & 22.96 & 1.0-6 & 53.23\\
+\cline{1-10}
+E2006.train & 1  & 5.6-9  & \textbf{0.75}    & 4.4-9 & 0.88 & 1.0-11 & 1.39 & 4.4-5 & 1132.34\\
+\cline{1-10}
+\end{tabular}
+\caption{The results of tested algorithms on Lasso problem with real data($\lambda = 10^{-4}\|\mathcal{B}^{\mathrm{T}}\bm{b}\|_{\infty}$).}\label{tab:1e4}
+\end{table}
+\end{scriptsize}
+
+%\begin{footnotesize}
+%\begin{table}[h]
+%\centering
+%\caption{
+%Statistics of the UCI test instances .}\label{tab:tensor-image}
+%\begin{tabular}{|c|c|c|c|c|c|}
+%\cline{1-6}
+%Probname      &  $(m,n)$ & $\lambda_{\max}(\mathcal{B}\mathcal{B}^*)$   &   Probname      &  $(m,n)$ & $\lambda_{\max}(\mathcal{B}\mathcal{B}^*)$\\ \cline{1-6}
+%E2006.train & (3308, 72812) & 1.912+05 & log1p.E2006.train  & (16087,4265669) &
+% 5.86e+07  \\ \cline{1-6}
+% E2006.test & (3308,72812) &  4.79e+04 &
+% log1p.E2006.test & (3308,1771946) & 1.46e+07 \\ \cline{1-6}
+% pyrim5 &  (74,169911) & 1.22e+06
+%& triazines4 & (186,557845) & 2.07e+07 \\ \cline{1-6}
+%abalone7 &  (4177,6435) & 5.21e+05 &
+%bodyfat7 & (252,116280) & 5.29e+04 \\ \cline{1-6}
+%housing7 & (506,77520) & 3.28e+05 &
+%mpg7 & (392,3432) & 1.28e+04 \\ \cline{1-6}
+%spacega9 & (3107,5005) & 4.01e+03 & & &\\\cline{1-6}
+%  \end{tabular}
+%\end{table}
+%\end{footnotesize}
+
+\begin{footnotesize}
+\begin{table}[H]
+\centering
+
+\begin{tabular}{|c|c|c|}
+\cline{1-3}
+Probname      &  $(m,n)$ & $\lambda_{\max}(\mathcal{B}\mathcal{B}^*)$  \\ \cline{1-3}
+E2006.train & (3308, 72812) & 1.912+05 \\ \cline{1-3}
+log1p.E2006.train  & (16087,4265669) & 5.86e+07  \\ \cline{1-3}
+ E2006.test & (3308,72812) &  4.79e+04 \\ \cline{1-3}
+ log1p.E2006.test & (3308,1771946) & 1.46e+07 \\ \cline{1-3}
+ pyrim5 &  (74,169911) & 1.22e+06 \\ \cline{1-3}
+ triazines4 & (186,557845) & 2.07e+07 \\ \cline{1-3}
+abalone7 &  (4177,6435) & 5.21e+05 \\ \cline{1-3}
+bodyfat7 & (252,116280) & 5.29e+04 \\ \cline{1-3}
+housing7 & (506,77520) & 3.28e+05 \\ \cline{1-3}
+mpg7 & (392,3432) & 1.28e+04 \\ \cline{1-3}
+spacega9 & (3107,5005) & 4.01e+03  \\ \cline{1-3}
+  \end{tabular}
+  \caption{
+Statistics of the UCI test instances .}\label{tab:tensor-image}
+\end{table}
+\end{footnotesize}
+
+
+
+
+
+ %\section{The case of Fused Lasso}
+% The Fused Lasso problem can be formulated as
+% \begin{equation} \label{fusedlasso}
+%\min_{x} \quad \left\{ \frac{1}{2}\|Ax-b\|^2 + \lambda_1\|x\|_1 + \lambda_2 \|Dx\|_1 \right\},
+% \end{equation}
+%$Dx = [x_1,x_2-x_1,\cdots,x_{n}-x_{n-1}].$ Its dual problem is given by
+%\begin{equation} \label{dual:fused}
+%\begin{aligned}
+%\min_{\bm{\lambda},\bm{\mu},\bm{w}} \quad & \frac{1}{2}\|\bm{\lambda}\|^2+\iprod{\lambda}{\bm{b}} + \delta_{\|\cdot\|_{\infty}<\lambda_1}(\bm{\mu}) + \delta_{\|\cdot\|_{\infty}<\lambda_2}(\bm{w}),\\
+%\st \quad & A^{\mathrm{T}}\bm{\lambda}+D^{\mathrm{T}}\bm{\mu}+\bm{w} =0.
+%\end{aligned}
+%\end{equation}
+%Then we introduce two auxiliary variables $\bm{u} = \bm{\lambda}$,$\bm{v}=\bm{\mu}$ to decouple the variables for the constraint $A^{\mathrm{T}}\bm{\lambda}+D^{\mathrm{T}}\bm{\mu}+\bm{w} =0.$ Therefore, one can equivalently recast \eqref{dual:fused} as:
+%\begin{equation} \label{dual:fused2}
+%\begin{aligned}
+%\min_{\bm{\lambda},\bm{\mu},\bm{w}} \quad & \frac{1}{2}\|\bm{\lambda}\|^2+\iprod{\bm{\lambda}}{\bm{b}} + \delta_{\|\cdot\|_{\infty}<\lambda_1}(\bm{\mu}) + \delta_{\|\cdot\|_{\infty}<\lambda_2}(\bm{w}),\\
+%\st \quad & A^{\mathrm{T}}\bm{\lambda}+D^{\mathrm{T}}\bm{\mu}+\bm{w} =0,  \bm{v}=\bm{\mu}.
+%\end{aligned}
+%\end{equation}
+%Then the lagrange function of \eqref{dual:fused2} is represented as
+%\begin{equation}
+%\begin{aligned}
+%&\mathcal{L}_{\sigma}(\bm{\lambda},\bm{\mu},\bm{w},\bm{v};\bm{x},\bm{q}) =  \frac{1}{2}\|\bm{\lambda}\|^2+\iprod{\bm{\lambda}}{\bm{b}} + \delta_{\|\cdot\|_{\infty}<\lambda_1}(\bm{\mu}) + \delta_{\|\cdot\|_{\infty}<\lambda_2}(\bm{w}) \\
+%& +\frac{\sigma}{2}\|\bm{\mu}-\bm{v}+\bm{q}/\sigma\|^2 + \frac{\sigma}{2}\|A^{\mathrm{T}}\bm{u}+D^{\mathrm{T}}\bm{v}+\bm{w}-\bm{x}/\sigma\|^2  - \frac{1}{2\sigma}\left(  \|\bm{x}\|^2 + \|\bm{q}\|^2 \right) ,
+%\end{aligned}
+%\end{equation}
+%where $\bm{x},\bm{p}$ and $\bm{q}$ the Lagrange multipliers.
+%Then the augmented Lagrangian function can be constructed in the following way:
+%\begin{equation}\label{func:fuse-saddle}
+%\Phi(\bm{u},\bm{v},\bm{x},\bm{p},\bm{q}):  = \min_{\bm{w},\bm{u}} \mathcal{L}_{\sigma}(\bm{\lambda},\bm{\mu},\bm{w},\bm{u},\bm{v};\bm{x},\bm{p},\bm{q})
+%\end{equation}
+%This is due to the fact that the minimization problem in \eqref{func:fuse-saddle} has the closed-form solutions:
+%\begin{equation}
+%\begin{aligned}
+%\bm{w} &= \mathcal{P}_{\|\cdot\| \le \lambda_1} \left( \bm{x}/\sigma - A^{\mathrm{T}}\bm{u}-D^{\mathrm{T}}\bm{v} \right),\\
+%\bm{\mu} &= \mathcal{P}_{\|\cdot\| \le \lambda_2}\left(\bm{q}/\sigma -\bm{v} \right).
+%\end{aligned}
+%\end{equation}
+%Define $\bm{w}=(\bm{\lambda},\bm{v},\bm{x},\bm{q}),$ then we have
+%\begin{equation}
+%\begin{aligned}
+%    \Phi(\bm{w}) & = \frac{1}{2}\|\bm{\lambda}\|^2 + \iprod{\bm{\lambda}}{\bm{b}}+ \frac{\sigma}{2}\|\psi_{\lambda_1}(\bm{v}-\frac{\bm{q}}{\sigma})\|^2 +\frac{\sigma}{2}\|\psi_{\lambda_2}(A^{\mathrm{T}}\bm{\lambda} + D^{\mathrm{T}}\bm{v} - \frac{\bm{x}}{\sigma}) \|^2 \\
+%     & - \frac{1}{2\sigma}\left(  \|\bm{x}\|^2 + \|\bm{q}\|^2 \right) ,
+%\end{aligned}
+%\end{equation}
+%where $\psi_{\lambda}(\bm{x})= \text{sign}(\bm{x})\max\left\{|\bm{x}|-\lambda,0\right\}.$
+%Then the gradient of function $\Phi$ is given as follows:
+%\begin{equation}
+%\begin{aligned}
+%\nabla_{\bm{\lambda}}\Phi(\bm{w}) &= \bm{\lambda} + \bm{b} + \sigma A\psi_{\lambda_2}(A^{\mathrm{T}}\bm{\lambda} + D^{\mathrm{T}}\bm{v} - \frac{\bm{x}}{\sigma}) ,\\
+%\nabla_{\bm{v}}\Phi(\bm{w}) &= \sigma D \psi_{\lambda_2}(A^{\mathrm{T}}\bm{\lambda} + D^{\mathrm{T}}\bm{v} - \frac{\bm{x}}{\sigma} ) + \sigma \psi_{\lambda_1}(\bm{v}-\frac{\bm{q}}{\sigma}),\\
+%\nabla_{\bm{x}}\Phi(\bm{w}) &= -\psi_{\lambda_1}(A^{\mathrm{T}}\bm{\lambda} + D^{\mathrm{T}}\bm{v} - \frac{\bm{x}}{\sigma}) - \frac{\bm{x}}{\sigma},\\
+%\nabla_{\bm{q}}\Phi(\bm{w}) &=  \psi_{\lambda_2}(\bm{v}- \frac{\bm{q}}{\sigma}) - \frac{\bm{q}}{\sigma}.
+%\end{aligned}
+%\end{equation}
+%We focus on the following nonlinear operator:
+%\begin{equation}\label{eqn:F}
+%F(\bm{w}) = (\nabla_{\bm{\lambda}}\Phi(\bm{w}),\nabla_{\bm{v}}\Phi(\bm{w}),-\nabla_{\bm{x}}\Phi(\bm{w}),-\nabla_{\bm{q}}\Phi(\bm{w})).
+%\end{equation}
+%Then the corresponding generalized Jacobian matrix of $\Phi(\bm{\lambda},\bm{v},\bm{x},\bm{q})$ is
+%\[
+%J = \left(
+%\begin{array}{cccc}
+%    \mathcal{I}+ \sigma AD_1A^{\mathrm{T}}  & \sigma AD_1D^{\mathrm{T}}  & -AD_1 & 0 \\
+%    \sigma DD_1A^{\mathrm{T}} &\sigma (DD_1D^{\mathrm{T}}+ D_2)  & -DD_1 & -D_2  \\
+%    AD_1 & DD_1 & \frac{1}{\sigma}(I-D_3)& 0 \\
+%    0 & D_2 & 0& \frac{1}{\sigma}(I-D_4) \\
+%\end{array} \right),
+%\]
+%  where $\mathcal{I}$ is the identity operator, $D_1 \in \partial \psi_{\lambda_1}(A^{\mathrm{T}}\bm{\lambda} + D^{\mathrm{T}}\bm{v} - \frac{\bm{x}}{\sigma}) $ and $D_2 \in \partial  \psi_{\lambda_1}(\bm{v}-\frac{\bm{q}}{\sigma}),$
+%Then the newton system can be represented as
+%\begin{equation}\label{equ:linear-fusedlasso}
+%    (J + \tau I) \bm{d} = -  F(\bm{w}).
+%\end{equation}
+% the simplified Newton system to solve $F(\bm{w}) = 0$ is represented by:
+% \begin{equation} \label{equ:linear-image2}
+%    %  \mathcal{H}_{\bm{r}}\left(  \begin{array}{c}
+%    %      \bm{d}_{\bm{y}}  \\
+%    %      \bm{d}_{\bm{\bm{s}}}
+%    % \end{array} \right) =
+%    \left(
+%    \begin{array}{cc}
+%     \mathcal{H}_{\bm{r}_{11}} & \mathcal{H}_{\bm{r}_{12}}  \\
+%       \mathcal{H}_{\bm{r}_{12}}^{\mathrm{T}} & \mathcal{H}_{\bm{r}_{22}}
+%    \end{array}
+%    \right) \left(  \begin{array}{c}
+%         \bm{d}_{\bm{y}}  \\
+%         \bm{d}_{\bm{\bm{s}}}
+%    \end{array} \right)  = \left(  \begin{array}{c}
+%        \tilde{R}_1  \\
+%        \tilde{R}_2
+%    \end{array} \right) ,
+% \end{equation}
+% where
+% \begin{equation*} \label{eqn:image-final}
+%     \begin{aligned}
+%      \mathcal{H}_{\bm{r}_{11}} & =  \bm{A}\overline{D}_1 \bm{A}^{\mathrm{T}} + (\tau_1+1) \mathcal{I} , ~~   \mathcal{H}_{\bm{r}_{12}} =  \bm{A}\overline{D}_{1}\bm{D}^{\mathrm{T}},~~\mathcal{H}_{\bm{r}_{22}} = \bm{D} \overline{D}_1\bm{D}^{\mathrm{T}} + \overline{D}_{2}  + \tau_2 \mathcal{I}, \\
+%      \tilde{R}_1 & = -\bm{A}D_{1}(D^{\tau_3}_1)^{-1} F_{\bm{u}}(\bm{w}) -  F_{\bm{y}}(\bm{w}), \\
+%      \tilde{R}_2 & =   -\bm{D}D_{1}(D^{\tau_4}_{1})^{-1} F_{\bm{u}}(\bm{w})  - D_2  (D^{\tau_4}_{2})^{-1} F_{\bm{q}}(\bm{w}) - F_{\bm{z}}(\bm{w}) ,
+%     \end{aligned}
+% \end{equation*}
+%where $\,
+%D_1^{\tau_3} = (\frac{1}{\sigma} + \tau_3)\mathcal{I} - \frac{1}{\sigma}D_1 ,D_2^{\tau_4} = (\frac{1}{\sigma} + \tau_4)\mathcal{I} -\frac{1}{\sigma} D_2,\, \Tilde{D}_1 = D_1(D_1^{\tau_3})^{-1}D_1$ and  $\Tilde{D}_2 = D_2(D_2^{\tau_3})^{-1}D_2$, $\overline{D}_1 = \sigma D_1 + \tilde{D}_1, \overline{D}_2 = \sigma D_2 + \tilde{D}_2$.
+%
+%Then we have
+%  If the explicit solution of $d_2$ can be obtained via
+%\begin{equation}\label{eq:pd2}
+%    d_2 = (\mathcal{M}_4)^{-1} (\tilde{R}_2  - \mathcal{M}_3 d_1),
+%\end{equation}
+%one only needs to solve the following system respect to $d_1$:
+%\begin{equation}\label{eq:pd1}
+%    (\mathcal{M}_1   - \mathcal{M}_2  (\mathcal{M}_4)^{-1}\mathcal{M}_3 )d_1 = \tilde{R}_1 - \mathcal{M}_2(\mathcal{M}_4)^{-1} \tilde{R}_2.
+%\end{equation}
+%Then we have:
+%\be
+%\begin{aligned}
+%& (\mathcal{M}_1   - \mathcal{M}_2  (\mathcal{M}_4)^{-1}\mathcal{M}_3 )d_1 \\
+%& = \sigma \mathcal{B}D_{\mathcal{K}}\mathcal{B}^*d_1 + \tau_1 d_1+ \mathcal{B}\tilde{D}_{\mathcal{K}}\mathcal{B}^*d_1 - \mathcal{B}(\sigma D_{\mathcal{K}}+\tilde{D}_{\mathcal{K}}) (\mathcal{M}_4)^{-1} (\sigma D_{\mathcal{K}}+\tilde{D}_{\mathcal{K}})\mathcal{A}^*d_1 \\
+%& = \tau_1 d_1 + \mathcal{A}(\sigma D_{\mathcal{K}}+\tilde{D}_{\mathcal{K}})\left[(\sigma t)\tilde{Q}^T$. Note that
+%\begin{equation}
+%   \mathrm{Mat} (\mathcal{M}_4) =  O +   \sigma  \mathbf{\mathrm{Mat}}(D_{f})  + \mathrm{Mat} (\tilde{D}_{h}).
+%\end{equation}
+%Because $ \sigma  \mathbf{\mathrm{Mat}}(D_{f})  + \mathrm{Mat} (\tilde{D}_{h})$ is the diagonal matrix, where the diagonal entries is $\sigma + 1/\tau_4$ or $0$.
+%Let $l$ be the number of non-zero diagonal entries.  One can factorize $\sigma  \mathbf{\mathrm{Mat}}(D_{f})  + \mathrm{Mat} (\tilde{D}_{h}) = UU^T$, where $U\in\mathbb{R}^{n^2\times l}$. The SMW formula implies that
+%\begin{equation}\label{eq:pD4}
+%\begin{aligned}
+%    \mathrm{Mat}( \mathcal{M}_4^{-1}) & = O^{-1} - O^{-1}U(I_l + U^TO^{-1}U)^{-1}U^TO^{-1},
+%\end{aligned}
+%\end{equation}
+
+%Then the equation \eqref{eq:pd1} can be reformulated as follows:
+%\be
+%\mathrm{Mat}(\mathcal{M}_1)-\mathrm{Mat}(\mathcal{M}_2)(\mathrm{Mat}(\mathcal{M}_4)^{-1})\mathrm{Mat}(\mathcal{M}_3)d_1
+%\ee
+\subsection{Fused Lasso}
+The Fused Lasso problem corresponding to \eqref{general} can be expressed as
+\begin{equation}\label{fused-lasso}
+\min_{\bm{x}} \quad  \frac{1}{2}\|\mathcal{B}(\bm{x})-\bm{b}\|^2 + \lambda_1 \|\bm{x}\|_1 + \lambda_2 \| F \bm{x} \|.
+\end{equation}
+We refer the readers to \cite{li2018efficiently} for more details on the calculation of the proximal operator of the fused regularizer. We compare our algorithm with SSNAL, ADMM, and SLEP solvers. Consistent with the Lasso problem, we also test the problems in data from the UCI data and the LIBSVM dataset.   
+The numerical experiments for UCI datasets are listed in Table \ref{tab:fus1e3}. It is shown that SSNCVX has comparable performance to SSNAL and better performance than ADMM and SLEP.
+
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|cc|cc|cc|cc|}
+\cline{1-11}
+\multirow{2}{*}{id} & \multirow{2}{*}{nnz($x$)}& \multirow{2}{*}{nnz($Bx$)} & \multicolumn{2}{c|}{SSN} & \multicolumn{2}{c|}{SSNAL} & \multicolumn{2}{c|}{SLEP} & \multicolumn{2}{c|}{ADMM} \\ \cline{4-11}
+ &  & & $\eta$     & time        & $\eta$  & time & $\eta$  & time & $\eta$  & time\\ \cline{1-11}
+uci\_CT  & 8 & 1  & 6.3-7  & \textbf{0.25}    & 7.9-7 & 0.42 & 1.8-6 & 2.06 & 7.7-3 & 41.75 \\ \cline{1-11}
+log1p.E2006.train  & 31 & 2  & 2.8-7  & \textbf{10.43}    & 2.4-7 & 14.02 & 1.2-2 & 4889.15 & 1.2-1 & 3623.18 \\ \cline{1-11}
+E2006.test& 1 & 1 & 1.5-7  & \textbf{0.17}    & 5.1-7 & 0.33 & 4.8-8 & 0.93 & 8.2-7 & 1768.26\\ \cline{1-11}
+log1p.E2006.test & 33 & 1 & 4.1-7  & \textbf{2.60}    & 8.1-7 & 2.74 & 1.2-2 & 1690.60 & 2.4-2 & 3601.25\\ \cline{1-11}
+ pyrim5 & 1135 & 74 & 9.1-7 & \textbf{2.34}    & 4.5-7 & 3.40 & 3.4-2 & 238.43 & 2.4-3 & 3601.20 \\ \cline{1-11}
+ triazines4 & 2666 & 206 & 2.1-7 & \textbf{10.24}    & 9.8-7 & 15.49 & 7.8-2 & 585.70 & 2.8-2 & 3601.89 \\ \cline{1-11}
+  bodyfat7 & 63 & 8 & 3.0-7 & \textbf{0.72}    & 7.2-9 & 1.35 & 9.9-7 & 41.13 & 3.5-3 & 3612.99 \\ \cline{1-11}
+  abalone7 & 1 & 1 & 1.6-7 & \textbf{0.83}    & 5.3-8 & 0.95 & 1.3-3 & 32.51 & 6.4-4 & 538.90 \\ \cline{1-11}
+ housing7 & 205 & 47  & 7.6-7  &\textbf{1.98}   & 8.2-7 & 2.73 & 5.0-3 & 117.07 & 2.2-2 & 3600.28 \\ \cline{1-11}
+  mpg7  & 42 & 20 & 1.9-7  & \textbf{0.08}   & 1.8-7 & 0.11 & 3.4-6 & 3.19 & 6.3-6 & 156.31 \\ \cline{1-11}
+ spacega9  & 24 & 11 & 5.0-8  & \textbf{0.27}   & 1.2-7 & 0.44 & 6.1-8 & 5.32 & 9.9-7 & 337.14 \\ \cline{1-11}
+E2006.train & 1 & 1 & 3.7-7  & \textbf{0.42}    & 4.0-8 & 0.98 & 9.7-12 & 0.39 & 4.3-5 & 1196.42\\ \cline{1-11}
+ \end{tabular}
+ \caption{The results of tested algorithms on Fused Lasso problem ($\lambda_1 = 10^{-3}  \|\mathcal{B}^*b\|_{\infty}$ and $\lambda_2 = 5 \lambda_1.$ ) }\label{tab:fus1e3}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|cc|cc|cc|cc|}
+\cline{1-11}
+\multirow{2}{*}{id} & \multirow{2}{*}{nnz($x$)}& \multirow{2}{*}{nnz($Bx$)} & \multicolumn{2}{c|}{SSN} & \multicolumn{2}{c|}{SSNAL} & \multicolumn{2}{c|}{SLEP} & \multicolumn{2}{c|}{ADMM} \\
+\cline{4-11}
+& & & $\eta$ & time & $\eta$ & time & $\eta$ & time & $\eta$ & time\\
+\cline{1-11}
+uci\_CT & 18 & 8 & 6.3-7 & \textbf{0.40} & 8.9-10 & 0.42 & 1.8-6 & 2.06 & 7.7-3 & 39.29 \\
+\cline{1-11}
+log1p.E2006.train & 8 & 3 & 7.0-7 & \textbf{8.37} & 1.5-7 & 12.6 & 1.2-2 & 4889.15 & 1.2-1 & 3606.14 \\
+\cline{1-11}
+E2006.test & 1 & 1 & 1.5-7 & \textbf{0.17} & 2.9-8 & 0.33 & 4.8-8 & 0.93 & 7.7-7 & 699.27 \\
+\cline{1-11}
+log1p.E2006.test & 32 & 5 & 3.1-9 & \textbf{3.07} & 1.2-8 & 3.31 & 1.2-2 & 1690.60 & 7.9-2 & 3601.20 \\
+\cline{1-11}
+pyrim5 & 327 & 97 & 9.1-7 & \textbf{2.34} & 2.0-7 & 3.06 & 3.4-2 & 238.43 & 1.5-3 & 3601.13 \\
+\cline{1-11}
+triazines4 & 1244 & 286 & 8.2-7 & \textbf{10.51} &2.4-7 & 12.63 & 7.8-2 & 585.70 & 2.8-2 & 3603.56 \\
+\cline{1-11}
+bodyfat7 & 2 & 3 & 2.8-8 & \textbf{0.81} & 4.7-8 & 0.89 & 9.9-7 & 41.13 & 2.7-3 & 3606.85 \\
+\cline{1-11}
+abalone7 & 26 & 15 & 3.7-7 & \textbf{0.49} & 5.0-9 & 1.17 & 1.3-3 & 32.51 & 5.0-4 & 545.23 \\
+\cline{1-11}
+housing7 & 131 & 117 & 6.4-7 & \textbf{1.46} & 3.9-7 & 2.4 & 5.0-3 & 117.07 & 2.0-2 & 3603.08 \\
+\cline{1-11}
+mpg7 & 32 & 39 & 6.7-7 & \textbf{0.07} & 2.2-7 & 0.15 & 3.4-6 & 3.19 & 1.0-6 & 77.58 \\
+\cline{1-11}
+spacega9 & 14 & 13 & 8.7-7 & \textbf{0.22} & 1.7-7 & 0.44 & 6.1-8 & 5.32 & 1.0-6 & 333.39 \\
+\cline{1-11}
+E2006.train & 1 & 1 & 4.2-7 & \textbf{0.45} & 4.0-7 & 1.12 & 9.7-12 & 0.39 & 4.4-5 & 1189.36 \\
+\cline{1-11}
+\end{tabular}
+\caption{The results of tested algorithms on Fused Lasso problem ($\lambda_1 = 10^{-3} \|\mathcal{B}^*b\|_{\infty}$ and $\lambda_2 = \lambda_1.$ ) }\label{tab:fus1e31}
+\end{table}
+
+
+
+\subsection{QP}
+The QP problem corresponding to \eqref{general} can be represented as
+\begin{equation} \label{prob-QP}
+    \min_{\bm{x}} \frac{1}{2} \iprod{\bm{x}}{\mathcal{Q}(\bm{x})} + \iprod{\bm{c}}{\bm{x}}, \quad \st ~~ \mathcal{A}(\bm{x}) = \bm{b}, ~~ \texttt{l} \le \bm{x} \le \texttt{u}.
+\end{equation}
+% \subsection{LP}
+\subsection{SOCP}
+The SOCP problem is formulated as:
+\begin{equation} \label{socp}
+\begin{aligned}
+    \min_{\bm{x}} \iprod{\bm{c}}{\bm{x}} \quad \st \, \mathcal{A}(\bm{x}) = \bm{b},~~ \bm{x} \in \mathcal{Q}^n,
+\end{aligned}
+\end{equation}
+where $\mathcal{Q}^n = \mathcal{Q}_1 \times \mathcal{Q}_2 \times \cdots \times \mathcal{Q}_n$ and $\mathcal{Q}_i = \{(x_0, \bar{x}) \in \mathbb{R}^{n_i} | x_0 \geq \|\bar{x}\|_2 )\}$ represent second order cone.
+For SOCP case, we test the CBLIB problems\cite{friberg2016cblib} listed on Hans Mittelmann's SOCP Benchmark\cite{mittelmann2003independent}. In Table \ref{tab:socp_results}, we compare the number of iterations and running time of SSNCVX with commonly used solver ECOS\cite{domahidi2013ecos}, SDPT3\cite{toh1999sdpt3} and MOSEK\cite{mosek}.
+It is shown that the geometric mean demonstrates that SSNCVX achieves 19 times and 6 times acceleration over ECOS and SDPT3 respectively, while remaining 4 times slower than the commercial solver MOSEK. This performance discrepancy stems from fundamental architectural differences: ECOS and SDPT3 employ fewer numerical strategies, leading to higher per-iteration costs and failures on ill-conditioned problems. Specifically, SDPT3's implementation of the reduced system interior-point method does not adequately account for dense column structures, causing memory overflow in "beam7" and "beam30". Sparse embedded system of ECOS limits the capability to process dense coefficient matrices encountered in some of the "fir"-type instances. However, MOSEK integrates advanced presolving techniques and highly optimized linear algebra routines. As a result, MOSEK demonstrates superior computational efficiency, successfully solving all instances. In SSNCVX, we implement several basic strategies such as dense column and reordering. These implementations enable SSNCVX to solve all the instances in Table \ref{tab:socp_results}, and the numerical results showcase both practical value and significant potential of SSNCVX.
+\begin{scriptsize}
+\begin{table}[h]
+
+\begin{tabular}{|c|c|cc|cc|cc|cc|}
+\cline{1-10}
+\multirow{2}{*}{id}&\multirow{2}{*}{nnz} &  \multicolumn{2}{c|}{SSN} & \multicolumn{2}{c|}{ECOS} & \multicolumn{2}{c|}{SDPT3} & \multicolumn{2}{c|}{MOSEK} \\ \cline{3-10}
+&  &    iter     & time        & iter  & time & iter   & time & iter  & time\\ \cline{1-10}
+beam7               & 15229465  & 43 & 91.2 & 53 & 205.97 & - & - & 48 & 19.7\\ \cline{1-10}
+beam30              & 64074520  & 59 & 907.4 & 62 & 2464.71 & - & - & 34 & 96.45\\ \cline{1-10}
+chainsing-50000-1   & 899966    & 6 & 6.29 & - & - & 24 & 20.6 & 9 & 3.79\\ \cline{1-10}
+chainsing-50000-2   & 749975    & 19 & 11.09 & - & - & - & - & 13 & 4.12\\ \cline{1-10}
+chainsing-50000-3   & 599981    & 23 & 11.24 & - & - & 37 & 22.89 & 13 & 2.03\\ \cline{1-10}
+db-joint-soerensen  & 6035916   & 117 & 451.79 & - & - & - & - & 37 & 36.25\\ \cline{1-10}
+db-plate-yield-line & 1545386   & 88 & 48.98 & - & - & - & - & 19 & 6.16\\ \cline{1-10}
+dsNRL               & 66668564  & 407 & 970.22 & - & - & 33 & 625.19 & 26 & 67.1\\ \cline{1-10}
+firL1               & 39787428  & 44 & 96.69 & 41 & 1305.24 & 27 & 594.66 & 19 & 20.5\\ \cline{1-10}
+firL1Linfalph       & 79574856  & 93 & 315.25 & 45 & 2846.61 & 31 & 944.96 & 19 & 91.75\\ \cline{1-10}
+firL1Linfeps        & 9873426   & 104 & 180.6 & 177 & 2530.77 & 25 & 143.21 & 69 & 27.49\\ \cline{1-10}
+firL2a              & 50015001  & 9 & 13.06 & 5 & 944.63 & 7 & 433.11 & 0 & 4.35\\ \cline{1-10}
+firL2L1alph         & 9985771   & 15 & 21.75 & 24 & 201.54 & 20 & 129.19 & 12 & 5.84\\ \cline{1-10}
+firL2L1eps          & 40288929  & 54 & 102.44 & 25 & 796.55 & 26 & 616.54 & 17 & 17.2\\ \cline{1-10}
+firL2Linfalph       & 121660011 & 24 & 139.48 & - & - & 21 & 864.75 & 7 & 41.67\\ \cline{1-10}
+firL2Linfeps        & 19108570  & 72 & 122.61 & 30 & 687.08 & 24 & 312.9 & 20 & 29.94\\ \cline{1-10}
+firLinf             & 79771354  & 43 & 128.23 & 31 & 3478.69 & 24 & 657.20 & 17 & 123.55\\ \cline{1-10}
+wbNRL               & 39138234  & 27 & 27.61 & 42 & 1332.6 & 31 & 152.05 & 14 & 11.78\\ \cline{1-10}
+geomean             &           &    & 90.08 &    & 1731 &    & 560.45 &    & 22.71\\ \cline{1-10}
+\end{tabular}
+
+\caption{The results on Hans Mittelmann's SOCP benchmark.}\label{tab:socp_results}
+\end{table}
+\end{scriptsize}
+
+\subsection{SPCA}
+The sparse PCA problem for a single component is:
+\[
+\max_{\bm{y}} \bm{y}^T \bm{L} \bm{y}, \quad \text{s.t.} \quad \|\bm{y}\|_2 = 1, \quad \text{card}(\bm{y}) \leq k.
+\]
+The function $\text{card}(\cdot)$ refers to the number of nonzero elements. This problem can be expressed as a low-rank SDP:
+\begin{equation}
+    \min_{\bm{X}} -\langle \bm{L}  , \bm{X} \rangle + \lambda \|\bm{X} \|_1 ,~  \text{s.t.}~ \text{Tr}(\bm{X}) = 1, \quad \bm{X} \succeq 0.
+\end{equation}
+ We formulate $\bm{L}$ based on the covariance matrix of real data or use the random example in \cite{zhang2012sparse}. For random examples, $\bm{L}$ is generated by: $ \bm{L} = \frac{1}{\|\bm{u}\|_2} \bm{u} \bm{u}^T + VV^{\mathrm{T}},$
+where $\bm{u} = [1, 1/2, \dots, 1/n]$ and each entry of $\bm{V} \in \mathbb{R}^{n \times n}$ is randomly uniformly chosen from $[0,1]$.
+We compare our algorithm with SuperSCS \cite{sopasakis2019superscs}. The maximum iteration time is 3600s. The results are presented in Table \ref{tab:spca}.
+
+\begin{table}[!htb]
+    \setlength{\tabcolsep}{4pt}
+    \caption{Computational results of SDPDAL and superSCS on SPCA .}\label{tab:spca}
+    \centering
+   \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    &\multicolumn{5}{c|}{SSNCVX}&\multicolumn{3}{c|}{superSCS} \\ \hline
+    id &  obj & $\eta_g$&$\eta_{K^*}$&$\eta_{C1}$  & time &obj&$\eta_{K}$&time \\ \hline
+    20news & -3.3+3 & 6.7-11& 2.0-12 & 2.0-12 & 0.8&-3.3+3&1.0-6 &9.6\\\hline
+    bibtex & -1.8+4 & 2.1-9& 1.2-11 & 1.2-11 & 76.6&-1.7+4&2.7-1 &3626.4\\\hline
+    colon\_cancer & -1.8+4 & 1.1-9& 5.5-12 & 5.5-12 & 45.9&-1.4+4&4.9-1 &3647.9\\\hline
+    delicious & -7.5+4 & 1.7-10& 2.6-12 & 2.6-12 & 2.9&-7.5+4&2.5-3 &2813.5\\\hline
+    dna & -1.8+3 & 1.1-9& 1.7-13 & 1.2-13 & 0.3&-1.8+3&1.0-6 &29.2\\\hline
+    gisette & -3.9+5 & 6.7-10& 2.5-12& 2.5-12 & 1190.0&-1.3+5&7.0-1 &3703.5\\\hline
+    madelon & -9.5+7 & 5.0-13& 5.9-15 & 5.9-15 & 16.7&-9.5+7&4.4-5 &3343.6\\\hline
+    mnist & -2.0+10 & 4.1-15& 7.6-17 & 4.0-17 & 15.7&-2.0+10&1.0-6 &195.4\\\hline
+    protein & -3.0+3 & 3.5-9& 3.5-11 & 3.5-11 & 3.7&-3.0+3&8.7-3 &2334.1\\\hline
+    random1024\_1 & -5.2+5 & 1.7-16& 0.0+0 & 9.3-18 & 2.8&-5.3+5&3.2-2 &3603.3\\\hline
+    random1024\_2 & -5.2+5 & 5.6-17& 0.0+0 & 4.4-18 & 2.7&-5.2+5&1.9-3 &3604.8\\\hline
+    random1024\_3 & -5.2+5 & 2.2-16& 0.0+0 & 1.3-17 & 2.8&-5.2+5&1.4-3 &3608.3\\\hline
+    random2048\_1 & -2.1+6 & 2.5-5& 0.0+0& 7.8-18 & 3.3&-2.0+6&2.3-1 &3605.5\\\hline
+    random2048\_2 & -2.1+6 & 2.5-5& 2.5-18& 5.1-18 & 3.5&-2.1+6&5.9-2 &3607.0\\\hline
+    random2048\_3 & -2.1+6 & 3.9-16& 7.4-18& 1.5-18 & 2.3&-2.1+6&1.5-2 &3608.2\\\hline
+    random4096\_1 & -8.4+6 & 1.7-16& 8.1-18& 8.2-18 & 73.4&-1.0+0&N/A &3655.4\\\hline
+    random4096\_2 & -8.4+6 & 2.8-16& 3.6-18& 3.5-18 & 73.1&-8.3+6&1.2-2 &3638.0\\\hline
+    random4096\_3 & -8.4+6 & 1.7-16& 1.9-19& 6.7-19 & 72.4&-8.4+6&9.6-3 &3645.0\\\hline
+    random512\_1 & -1.3+5 & 2.2-16& 2.2-18 & 4.3-18 & 0.6&-1.3+5&1.0-6 &252.0\\\hline
+    random512\_2 & -1.3+5 & 1.1-16& 0.0+0 & 1.1-17 & 0.6&-1.3+5&8.1-3 &2938.5\\\hline
+    random512\_3 & -1.3+5 & 0.0+0& 0.0+0 & 5.7-18 & 0.6&-1.3+5&8.2-3 &2802.0\\\hline
+    usps & -1.2+5 & 1.3-11& 2.4-13 & 2.4-13 & 1.1&-1.2+5&1.0-6 &229.8\\\hline
+\end{tabular}
+\end{table}
+
+\subsection{LRMC}
+The low-rank matrix recovery (LRMC) problem corresponding to \eqref{general} is represented by
+\begin{equation} \label{prob:LRMC}
+\min_{\bm{X}} \|\mathcal{B}(\bm{X}) - \bm{B}\|_{\mathrm{F}}^2 + \lambda \|\bm{X}\|_*.   
+\end{equation}
+We compare SSNCVX with classical ADMM on the following 8 images. The results are listed in Table \ref{tab:LRMC}.
+
+
+
+\begin{figure}[H]
+    \centering
+    {\includegraphics[width=0.115\textwidth]{figs/image1.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image2.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image3.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image4.eps}}
+    {\includegraphics[width=0.115\textwidth]{figs/image5.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image6.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image7.eps} }
+    {\includegraphics[width=0.115\textwidth]{figs/image8.eps}}
+    \caption{The tested eight images for LRMC.}
+    \label{fig:three_subfigures2}
+\end{figure}
+
+
+
+
+
+
+
+
+\begin{table}[htbp]
+\centering
+\caption{ Comparison between SSNCVX and ADMM on LRMC problem}
+\label{tab:LRMC}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Problem} & \multicolumn{2}{|c|}{SSNCVX} & \multicolumn{2}{|c|}{ADMM} \\
+\cline{2-5}
+ &  $\eta$ & Time  &  $\eta$ & Time  \\
+\hline
+Image1 & 1.5-9 & 37.1 & 0.89 & 8.7 \\
+\hline 
+Image2 & 4.3-9 & 40.1 & 0.82 & 10.2 \\
+\hline
+Image3 &5.3-9 & 46.2 & 0.88 & 12.5 \\
+\hline
+Image4 & 3.3-9 & 38.3 & 0.84 & 15.8 \\
+\hline
+Image5 & 7.4-9 & 36.1 & 0.90 & 9.3 \\
+\hline
+Image6 & 1.9-9 & 36.9 & 0.85 & 13.1 \\
+\hline
+Image7 & 1.6-9 & 33.2 & 0.91 & 11.4 \\
+\hline
+Image8 & 2.3-9 & 36.8 & 0.83 & 17.6 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{SDP with bound constraint}
+The SDP with bound constraint problem corresponding to \eqref{general} is
+\begin{equation}
+    \min_{\bm{x}} \iprod{\bm{C}}{\bm{X}}, \quad \st~~ \mathcal{A}(\bm{X}) = \bm{b}, \quad \bm{X} \in \mathbb{S}_+^n,\quad \bm{X} \in \mathcal{P}_1,
+\end{equation}
+where $\mathcal{P}_1$ is a box constraint. Given a network represented by a graph $G$ and an edge-weight matrix $W$, a certain type of frequency assignment problem on $G$ can be relaxed into the following SDP:
+
+\begin{equation} \label{prob:fap}
+\begin{aligned}
+\max_{X} \quad & \left\langle \left( \frac{k - 1}{2k} \right) L(G, W) - \frac{1}{2} \mathrm{Diag}(We),\ X \right\rangle \\
+\text{s.t.}\quad & \mathrm{diag}(X) = e,\quad X \in \mathbb{S}_+^n, \\
+& -E^{ij} \odot X = \frac{2}{k - 1},\quad \forall (i,j) \in U \subseteq E, \\
+& -E^{ij} \odot X \leq \frac{2}{k - 1},\quad \forall (i,j) \in E \setminus U,
+\end{aligned}
+\end{equation}
+where $k > 1$ is an integer, $L(G, W) := \mathrm{Diag}(We) - W$ is the Laplacian matrix, $E^{ij} = e_i e_j^\top + e_j e_i^\top$ with $e_i \in \mathbb{R}^n$ being the $i$th standard unit vector and $e \in \mathbb{R}^n$ is the vector of all ones. Define $M_{ij} = -\frac{1}{k - 1}$ if $(i,j) \in E$, and $M_{ij} = 0$ otherwise. Then \eqref{prob:fap} is equivalent to
+
+\begin{equation}
+\begin{aligned}
+\max_{X} \quad & \left\langle \left( \frac{k - 1}{2k} \right) L(G, W) - \frac{1}{2} \mathrm{Diag}(We),\ X \right\rangle \\
+\text{s.t.}\quad & \mathrm{diag}(X) = e,\quad X \in \mathbb{S}_+^n,\quad X - M \in \mathcal{P},
+\end{aligned}
+\end{equation}
+where $\mathcal{P} = \left\{ X \in \mathbb{S}^n \;\middle|\; X_{ij} = 0,\ \forall (i,j) \in U;\quad X_{ij} \geq 0,\ \forall (i,j) \in E \setminus U \right\}.$ We compare SSNCVX with SDPNAL+ at 14 FAP problems \cite{eisenblatter2002frequency}. The tested results are listed in Table \ref{tab:SDPb}.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison between SSNCVX and SDPNAL+ on FAP problems}
+\label{tab:SDPb}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Problem} & \multicolumn{2}{|c|}{SSNCVX} & \multicolumn{2}{|c|}{SDPNAL+} \\
+\cline{2-5}
+ &  $\eta$ & Time (s)  &  $\eta$ & Time (s)  \\
+\hline
+fap01 & $1.5\text{e-}9$ & 37.5 & 0.89 & 8.7 \\
+\hline 
+fap002 & $2.3\text{e-}9$ & 28.6 & 0.82 & 10.2 \\
+\hline
+fap003 & $2.3\text{e-}9$ & 37.4 & 0.88 & 12.5 \\
+\hline
+fap004 & $2.3\text{e-}9$ & 28.1 & 0.84 & 15.8 \\
+\hline
+fap005 & $2.3\text{e-}9$ & 34.7 & 0.90 & 9.3 \\
+\hline
+fap006 & $2.3\text{e-}9$ & 39.5 & 0.85 & 13.1 \\
+\hline
+fap007 & $2.3\text{e-}9$ & 36.2 & 0.91 & 11.4 \\
+\hline
+fap008 & $2.3\text{e-}9$ & 34.8 & 0.83 & 17.6 \\
+\hline
+fap009 & $2.3\text{e-}9$ & 32.1 & 0.86 & 14.2 \\
+\hline
+fap010 & $2.3\text{e-}9$ & 38.3 & 0.87 & 10.9 \\
+\hline
+fap011 & $2.3\text{e-}9$ & 35.6 & 0.92 & 12.8 \\
+\hline
+fap012 & $2.3\text{e-}9$ & 31.4 & 0.84 & 16.3 \\
+\hline
+fap013 & $2.3\text{e-}9$ & 33.9 & 0.89 & 11.7 \\
+\hline
+fap014 & $2.3\text{e-}9$ & 37.2 & 0.85 & 14.5 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Conclusion} \label{5}
+In this paper, we present a semismooth system based algorithm framework to solve a general class of
+%\begin{scriptsize}
+%\begin{table}
+%\begin{tabular}{|c|c|c|cc|cc|cc|cc|}
+%\cline{1-11}
+%\multirow{2}{*}{$id$} & \multirow{2}{*}{$nnz(x)$}& \multirow{2}{*}{$nnz(Bx)$} & \multicolumn{2}{c|}{SSN} & \multicolumn{2}{c|}{SSNAL} & \multicolumn{2}{c|}{iADMM} & \multicolumn{2}{c|}{ADMM} \\ \cline{4-11}
+% &  & & it     & time        & it  & time & $\eta$  & time & $\eta$  & time\\ \cline{1-10}& 44  & \textbf{0.35}    & 53 & 0.38 & 7.6-7 & 3:29 & 2.5-7 & 2:55 \\ \cline{1-11}
+%E2006.test& 1 & 1 & 18  & \textbf{0.19}    & 18 & 0.29 &  5.3-7 &  2:21  & 6.3-7 & 4:56\\ \cline{1-11}
+% bodyfat7 & 1 & 1 & 41 & \textbf{0.49}    & 56 & 1.06 & 6.0-7 &   7:59  & 9.8-7 &  2:22 \\ \cline{1-11}
+% housing7 & 205 & 47  & 70  & 8.53    & 68 & \textbf{2.20} & 9.2-7  &  17:24 &  9.9-7 & 4:20 \\ \cline{1-11}
+% spacega9  & 24 & 11 & 48  & \textbf{0.46}   & 54 & 0.50 &  7.6-7  &  30:26 & 9.7-7 &  7:33 \\ \cline{1-11}
+%E2006.train & 1 & 1 & 9  & \textbf{0.83}    & 11 & 1.12 & 5.3-7  & 36:42  & 9.9-7 & 10:53\\ \cline{1-11}
+% \end{tabular}
+% \caption{The results of our algorithm on Lasso problem with real data($\lambda = 10^{-3}  \|A^*b\|_{\infty}$), the }\label{tab:fus1e3}
+%\end{table}
+%\end{scriptsize}
+
+\bibliographystyle{ACM-Reference-Format}
+% \bibliographystyle{siamplain}
+\bibliography{ref}
+
+\section*{Appendix}
+
+
+\begin{landscape}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h]
+\centering
+\resizebox{1.3\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$f$ & $\text{atom}$ & $f^*$ & $\operatorname{prox}_{\lambda f}(\bm{x})[\bm{u}]$ & $\partial \text{prox}_{\lambda f}(\bm{x}) ~~\text{or}~~ \nabla f^*(\bm{x})$ & Assumptions \\ \hline
+$\lambda \| \bm{x}\|^2$ & \texttt{square} & $\frac{1}{4\lambda} \|\bm{y}\|^2$ & - & $ \frac{1}{2\lambda} \bm{x}$ & - \\ \hline
+$\lambda \sum_{i=1}^n e^{\bm{x}_i }$ & \texttt{exp} & $\sum_{i=1}^n \bm{y}_i \log \frac{\bm{y}_i}{\lambda} - \bm{y}_i$ & - & $\lambda \log(\bm{x}/\lambda)$ & $(\text{dom}(f^*) = \mathbb{R}_+^n)$ \\ \hline
+$-\lambda \sum_{i=1}^n \log \bm{x}_i  $ & \texttt{log} & $-\lambda(n + \sum_{i=1}^n \log(-\frac{\bm{y}_i}{\lambda} )) $ & - & $[\frac{-\lambda}{\bm{x}_1},\cdots, \frac{-\lambda}{\bm{x}_n  }  ]$ & $(\text{dom}(f^*) = \mathbb{R}_{--})$ \\ \hline
+% $ \lambda \log(\sum_{i=1}^n e^{\bm{x}_i} )$ & \texttt{logsumexp} & $ \sum_{i=1}^n \bm{y}_i \log(\bm{y}_i) - \lambda \text{log}(\lambda) $.  & - & $ 1 + [\log(\bm{x}_1),\cdots, \log(\bm{x}_n) ] $ & \text{dom}$(f^*) = \{\bm{y}_i \ge 0, \sum_{i=1}^n \bm{y}_i = \lambda \}$ \\ \hline
+$\lambda \|\bm{x}\|_1$ & \texttt{l1} & $\delta_{B_{\|\cdot\|_\infty}[0, \lambda]}(\bm{y})$ & $(|\bm{x}| - \lambda \bm{e})_+ \odot \operatorname{sgn}(\bm{x})$ & $\text{Diag}(\bm{u}),$
+$
+\bm{u}_i = \begin{cases}
+        0, & \mbox{if } |(\bm{x})_i| < \lambda,  \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ [1em] \hline
+$\lambda \|\bm{x}\|_2$ & \texttt{l2} & $\delta_{B_{\|\cdot\|_2}[0, \lambda]}(\bm{y})$ & $ \begin{cases}
+        \bm{x} - \lambda \bm{x} /\|\bm{x}\|_2, & \mbox{if } \|\bm{x}\|_2 > \lambda, \\
+        0, & \mbox{otherwise}.
+      \end{cases} $ &
+$
+ \begin{cases}
+        I - \lambda(I - \bm{xx}^{\mathrm{T}}/\|\bm{x}\|_2^2)/\|\bm{x}\|_2, & \mbox{if } \|\bm{x}\|_2 > \lambda, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ [1em] \hline
+$\lambda \|\bm{x}\|_\infty$ & \texttt{linfty} & $\delta_{B_{\|\cdot\|_1}[0, \lambda]}(\bm{y})$ & $\bm{x} - \lambda P_{B_{\|\cdot \|_1}[0,1]} (\bm{x} / \lambda)$ & $\text{Diag}(u),$
+$
+u_i = \begin{cases}
+        0, & \makecell[l]{\mbox{if } |\bm{x}/\lambda| > \mu_*, \text{where}~ \mu_* \\
+        ~ ~\text{satisfy}~ \bm{1}^{\mathrm{T}}[\bm{x} - \mu_* \bm{1}]_+ = \bm{1}}  \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ [1em] \hline
+$\delta_{ \texttt{l} \le \bm{x} \le \texttt{u} } (\bm{x})$ & \texttt{box} & $\iprod{ \texttt{u} }{\max\{\bm{x},0\} } +  \iprod{ \texttt{l} }{\min\{\bm{x},0\} }  $& $P_{ \texttt{l} \le \bm{x} \le \texttt{u} }(\bm{x})$  & $\text{Diag}(u),
+u_i = \begin{cases}
+        1, & \mbox{if } x_i/\lambda \in C, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+$ &  \\ [1em] \hline
+$\delta_{  \bm{x} \ge 0 } (\bm{x})$ & \texttt{l} & $\delta_{\bm{y} \ge 0 }(-\bm{y})$ & $P_{\ge 0}(\bm{x})$ & $\text{Diag}(u),
+u_i = \begin{cases}
+        1, & \mbox{if } x_i \ge 0, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+$ &  \\ [1em] \hline
+$\delta_{  \bm{x} \in \mathbb{S}_+^n } (\bm{x})$ & \texttt{s} & $\delta_{\bm{y} \in \mathbb{S}_+^n }(-\bm{y})$ & $P_{\mathbb{S}_+^n }(\bm{x})$ & \eqref{genJacobian-sdp} &  \\ [1em] \hline
+$\delta_{  \bm{x} \in \mathcal{Q}^n } (\bm{x})$ & \texttt{q} & $\delta_{\bm{y} \in \mathcal{Q}^n }(-\bm{y})$ & $P_{\mathbb{S}_+^n }(\bm{x})$ & \eqref{genJacboian:soc} &  \\ [1em] \hline
+
+% $\lambda \sigma_C (\bm{x})$ & \texttt{box} & $\delta_{\text{conv}(C)}(\bm{y})$ & $\bm{x} - \lambda P_C (\bm{x} / \lambda)$ & $\text{Diag}(u),
+% u_i = \begin{cases}
+%         0, & \mbox{if } x_i/\lambda \in C, \\
+%         1, & \mbox{otherwise}.
+%       \end{cases}
+% $ & - \\ [1em] \hline
+$\lambda \max \{\bm{x}_i\}$ & \texttt{max} & $\delta_{\Delta_n}(\bm{y})$ & $\bm{t} = \bm{x} - \lambda P_{\Delta_n} (\bm{x} / \lambda)$ & $\text{Diag}(\bm{u}),
+\bm{u}_i = \begin{cases}
+        0, & \mbox{if } \bm{x}_i = \bm{t}_i, \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & \\ [1em] \hline
+$\lambda \sum_{i=1}^k \bm{x}_{[i]}$ & \texttt{topk} & \makecell[c]{$\delta_{C_{e,k}}(\bm{y})$\\ $C_{e,k} = B_{\|\cdot\|_1, [0, k]} \cap \operatorname{Box}[0, e]$ } & $\bm{t} = \bm{x} - \lambda P_{C_{e, k}} (\bm{x} / \lambda)$ & $\text{Diag}(\bm{u}),
+\bm{u}_i = \begin{cases}
+        0, & \mbox{if } \bm{x}_i = \bm{t}_i, \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ &  \\ [1em] \hline
+$\lambda \sum_{i=1}^k |\bm{x}_{[i]}|$ & \texttt{l1topk} &  \makecell[c]{$\delta_{C_{e,k}}(\bm{y})$\\ $C_{e,k} = B_{\|\cdot\|_1, [0, k]} \cap \operatorname{Box}[-e, e]$ } &$\bm{t} = \bm{x} - \lambda P_{C_{e,k} } ( \bm{x} / \lambda)$ & $\text{Diag}(\bm{u}),
+\bm{u}_i = \begin{cases}
+        0, & \mbox{if } \bm{x}_i = \bm{t}_i, \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ [1em] \hline
+$\lambda H_{\mu} (\bm{x})$ & \texttt{huber} & $\begin{cases} 
+\frac{1}{2\lambda} \|\bm{y}\|^2 & \text{if } \|\bm{y}\| \leq \mu \lambda \\
++\infty & \text{if } \|\bm{y}\| > \mu \lambda
+\end{cases}$ & - & $\lambda \bm{x}$ & - \\ \hline
+$\lambda_1 \|\bm{x}\|_1 + \lambda_2 \| F\bm{x}\|_1  $ & \texttt{fused} & $\delta_{\|\bm{y}\|_{\infty} < \lambda_1}(\bm{y}) +\delta_{\| F^{\mathrm{T}}\bm{y}\|_{\infty} < \lambda_2}(\bm{y})   $ & \eqref{prox-fused} & \eqref{genJacobian:fused} & - \\ \hline
+\end{tabular}}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h]
+\centering
+\resizebox{1.3\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$f$ & $\text{atom}$ & $f^*$ & $\operatorname{prox}_{\lambda f}(\bm{x})[\bm{u}]$ & $\partial \text{prox}_{\lambda f}(\bm{x}) ~~\text{or}~~ \nabla f^*(\bm{x})$ & Assumptions \\ \hline
+$ \delta_{\| \bm{x} \|_1 \le \lambda}(\bm{x})$ & \texttt{l1con} & $ \lambda \|\bm{y} \|_{\infty}$ & $ P_{B_{\|\cdot \|_1}[0,1]} (\bm{x} / \lambda)$ & $\text{diag}(u), \bm{u}_i  = \begin{cases}
+        0, & \makecell[l]{\mbox{if } |\bm{x}/\lambda| > \mu_*, \text{where}~ \mu_* \\
+        ~ ~\text{satisfy}~ \bm{1}^{\mathrm{T}}[\bm{x} - \mu_* \bm{1}]_+ = \bm{1}}  \\
+        1, & \mbox{otherwise}.
+      \end{cases}$ & - \\ \hline
+$ \delta_{\| \bm{x} \|_2 \le \lambda}(\bm{x})$ & \texttt{l2con} & $\lambda \|\bm{y}\|_2$ & $ \begin{cases}
+        \lambda \bm{x} /\|\bm{x}\|_2, & \mbox{if } \|\bm{x}\|_2 > \lambda, \\
+        \bm{x}, & \mbox{otherwise}.
+      \end{cases} $  & $
+ \begin{cases}
+         \lambda(I - \bm{xx}^{\mathrm{T}}/\|\bm{x}\|^2)/\|\bm{x}\|, & \mbox{if } \|\bm{x}\|_2 > \lambda, \\
+        I, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ \hline
+$ \delta_{\| \bm{x} \|_{\infty} \le \lambda}(\bm{x})$ & \texttt{linftycon} & $\lambda \|\bm{y}\|_1$  & $P_{\| \bm{x} \|_{\infty} \le \lambda}(\bm{x})$ &  $\text{diag}(u), \bm{u}_i  = \begin{cases}
+        0, & \mbox{if } |\bm{x}| > \lambda,  \\
+        1, & \mbox{otherwise}.
+      \end{cases}$ & -  \\ \hline
+$\lambda \|\bm{X}\|_1$ & \texttt{l1} & $\delta_{B_{\|\cdot\|_\infty}[0, \lambda]}(\bm{Y})$ & $(|\bm{X}| - \lambda \bm{E})_+ \odot \operatorname{sgn}(\bm{X})$ & 
+$
+\bm{U}_{i,j} = \begin{cases}
+        0, & \mbox{if } |(\bm{X})_{i,j}| < \lambda,  \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ [1em] \hline
+$\lambda \| \bm{X} \|_{\mathrm{F}}^2$ & \texttt{square} & $\frac{1}{4\lambda} \|\bm{Y}\|_{\mathrm{F}}^2$ & - & $ 2\lambda \bm{X} $ & - \\ \hline
+$\lambda \| \bm{X} \|_{\mathrm{F}}$ & \texttt{frobenius} & $\delta_{B_{\|\cdot\|_\mathrm{F}}[0, \lambda]}(\bm{Y})$ & $\left(1 - \frac{\lambda}{\max\{ \| \bm{X} \|_{\mathrm{F}}, \lambda \}}\right) \bm{X}$ & $
+ \begin{cases}
+        I - \lambda(I - \frac{\bm{XX}^{\mathrm{T}}}{\|\bm{X}\|_{\mathrm{F}}^2})/\|\bm{X}\|_{\mathrm{F}}, & \mbox{if } \|\bm{X}\|_{\mathrm{F}} < \lambda, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ \hline
+$\lambda \| \bm{X} \|_{*}$ & \texttt{nuclear} & $\delta_{B_{\|\cdot\|_{S_{\infty}}}[0, \lambda]}(\bm{Y})$ & \eqref{prox:nuclear} & \eqref{genJacobian-nuclear} & - \\ \hline
+$\lambda \| \bm{X} \|_{1,2}$ & \texttt{l1l2} & $ \delta_{\|\bm{Y}\|_{\infty,2}<\lambda}(\bm{Y}) $ & $ [ \max\left(0, 1 - \frac{\lambda}{\|X_1\|_2} \right)X_1,\cdots, \max\left(0, 1 - \frac{\lambda }{\|X_n\|_2}  \right) X_n ]  $ & $
+ \begin{cases}
+        I - \lambda(I - \bm{X_iX_i}^{\mathrm{T}}/\|\bm{X}_i\|^2)/\|\bm{X}_i\|, & \mbox{if } \|\bm{X}_i\| > \lambda, \\
+        0, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ \hline
+$\lambda \| \bm{X} \|_{1,\infty} $ & \texttt{l1linfty} & $ \delta_{\|\bm{Y}\|_{\infty,1} < \lambda}(\bm{Y}) $ & $\bm{X}_i - \lambda P_{B_{\|\cdot \|_1}[0,1]} (\bm{X}_i / \lambda)$ & $
+u_{i,j} = \begin{cases}
+        0, & \makecell[l]{\mbox{if } |\bm{X}_j/\lambda| > \mu_{*,j}, \text{where}~ \mu_* \\
+        ~ ~\text{satisfy}~ \bm{1}^{\mathrm{T}}[\bm{x} - \mu_{*,j} \bm{1}]_+ = \bm{1}}  \\
+        1, & \mbox{otherwise}.
+      \end{cases}
+$ & - \\ \hline
+$-\lambda \log \det(\bm{X})$ & \texttt{logdet} & $\lambda(-n - \log \det(-\bm{Y}/\lambda))$ & - & $(-X/\lambda)^{-1}$ &  dom$(f^*)$ = $\mathbb{S}_{--}^n$ \\ \hline
+$\lambda \sigma_1(\bm{X})$ & \texttt{l2l2} & $\delta_{B_{\|\cdot\|_* }[0,\lambda ]  }(\bm{Y})$ & \eqref{prox:l2l2}  & \eqref{prox:l2l22} & - \\ \hline
+% $\lambda \sigma_C (\bm{x})$ & \texttt{box} & $\delta_{\text{conv}(C)}(\bm{y})$ & $\bm{x} - \lambda P_C (\bm{x} / \lambda)$ & $\text{Diag}(u),
+% u_i = \begin{cases}
+%         0, & \mbox{if } x_i/\lambda \in C, \\
+%         1, & \mbox{otherwise}.
+%       \end{cases}
+% $ & - \\ [1em] \hline
+\end{tabular}}
+\caption{Combined table of functions, their duals, proximal operators, and subdifferentials}
+\label{combined-table}
+\end{table}    
+\end{landscape}
+
+
+
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-manuscript.tex'.
