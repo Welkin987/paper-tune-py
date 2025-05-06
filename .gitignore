@@ -19,8 +19,7 @@ build/
 .env
 
 # Output files (optional, comment out if you want to version control outputs)
-files/output.*
-files/input.*
+files/
 
 # My file
 start2.bat
