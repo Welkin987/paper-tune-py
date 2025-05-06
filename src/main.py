@@ -5,10 +5,38 @@ import os
 import glob
 import sys
 import time
+import re
 from pathlib import Path
 from tqdm import tqdm
 
 from ask import ask
+
+
+def clean_response(text):
+    """
+    Clean up API response by removing surrounding backticks if present.
+    
+    Args:
+        text (str): The raw response from the API
+        
+    Returns:
+        str: Cleaned response with backticks removed if present
+    """
+    # Strip whitespace first
+    text = text.strip()
+    
+    # Check if text starts and ends with triple backticks
+    if text.startswith('```') and text.endswith('```'):
+        # Remove the backticks at the beginning and end
+        text = text[3:len(text)-3].strip()
+        
+        # If there's a language identifier after the opening backticks (like ```python),
+        # we need to remove the first line
+        lines = text.split('\n', 1)
+        if len(lines) > 1 and not lines[0].strip():
+            text = lines[1].strip()
+    
+    return text
 
 def main():
     # Find input files
@@ -100,7 +128,9 @@ def main():
         while retry_count < max_retries:
             try:
                 response = ask(prompt)
-                all_responses.append(response)
+                # Clean the response by removing backticks if present
+                cleaned_response = clean_response(response)
+                all_responses.append(cleaned_response)
                 break  # Success, exit the retry loop
             except Exception as e:
                 retry_count += 1
@@ -112,7 +142,7 @@ def main():
                     time.sleep(3)  # Wait 3 seconds before retry
     
     # Combine all responses and write to output file
-    combined_response = "".join(all_responses)
+    combined_response = "\n".join(all_responses)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(combined_response)
     

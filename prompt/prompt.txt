@@ -1,2 +1,4 @@
-Please revise the following excerpt from the paper, focusing solely on correcting "textual grammatical errors" without altering any other elements. The excerpt may contain incomplete formulas or tables—these do not need to be completed, only "textual grammatical errors" should be fixed. Maintain the original text formatting, indentation, and line breaks exactly as they are. Do not return any additional content; simply provide the corrected version of the paper excerpt. Here is the paper excerpt:
+Please revise the following excerpt from the paper, focusing solely on correcting "textual grammatical errors" without altering any other elements. The excerpt may contain incomplete formulas or tables—these do not need to be completed, only "textual grammatical errors" should be fixed. Maintain the original text formatting, indentation, and line breaks exactly as they are. Do not return any additional content; simply provide the corrected version of the paper excerpt. Here is the paper excerpt.
+```
 [content]
+```
